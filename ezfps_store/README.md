@@ -1,6 +1,6 @@
-# Nuxt 3 Minimal Starter
+# ezfps app v.1.0 beta
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Look at the [Documentation](ezfps.store/introduction) to learn more.
 
 ## Setup
 
