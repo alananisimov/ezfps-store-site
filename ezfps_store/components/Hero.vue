@@ -22,7 +22,7 @@
             </a>  </div>
         </div>
       </div>
-      <img src="https://svgshare.com/i/vX4.svg" alt="Product screenshot" class="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] -mt-64" width="2432" height="1442">
+      <img src="https://svgshare.com/i/vX4.svg" alt="Product screenshot" class="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] sm:-mt-64" width="2432" height="1442">
     </div>
   </div>
 </div>
