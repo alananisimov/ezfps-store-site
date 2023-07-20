@@ -9,7 +9,7 @@ export default defineNuxtConfig({
       fallbackLocale: 'ru',
       messages: {
         en: {
-          welcome: 'We create a real product'
+          start_trial: 'We create a real product'
         },
         ru: {
           start_trial: 'Мы создаём реальный продукт'
