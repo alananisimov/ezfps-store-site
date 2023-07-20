@@ -13,17 +13,16 @@ export default defineNuxtConfig({
 
     // Disabling automatic locale detection (see below)
     detectBrowserLanguage: true,
-    vueI18n: {
-      fallbackLocale: 'ru',
-      messages: {
-        en: {
+    
+    messages: {
+      en: {
           start_trial: 'We create a real product'
-        },
-        ru: {
-          start_trial : 'Мы создаём реальный продукт'
-        }
       },
-  },
+      ru: {
+        start_trial : 'Мы создаём реальный продукт'
+      }
+    },
+  
 },
   extends: '@nuxt-themes/docus',
   postcss: {
