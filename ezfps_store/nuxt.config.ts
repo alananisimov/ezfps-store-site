@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   i18n: {
     locales: ['en', 'ru'],
     defaultLocale: 'ru',
-    vueI18n: {
+    
       fallbackLocale: 'ru',
       messages: {
         en: {
@@ -14,7 +14,7 @@ export default defineNuxtConfig({
         ru: {
           start_trial: 'Мы создаём реальный продукт'
         }
-      }
+      
     }
   },
   extends: '@nuxt-themes/docus',
