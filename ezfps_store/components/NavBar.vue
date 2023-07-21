@@ -146,7 +146,7 @@ console.log(user)
 
 const products = [
   { name: 'ezfps app', description: 'Modern system optimizer', href: '/download', icon: ComputerDesktopIcon },
-  { name: 'telegram payments bot', description: 'Subscribe to windows optimizer plans', href: 'https://t.me/ezfps_bot', icon: ShoppingBagIcon },
+  { name: 'telegram bot', description: 'Subscribe to our optimizer plans', href: 'https://t.me/ezfps_bot', icon: ShoppingBagIcon },
   { name: 'mobile optimizer: soon', description: 'Optimize your phone without troubles', href: '#', icon: DevicePhoneMobileIcon }
 ]
 
