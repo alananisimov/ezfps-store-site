@@ -133,7 +133,7 @@ import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/vue/20/so
 
 const supabase = useSupabaseClient()
 const { data: { user } } = await supabase.auth.getUser()
-const log_out = () => {
+async function log_out(){
   const { error } = await supabase.auth.signOut()
   console.log(error)
 }
