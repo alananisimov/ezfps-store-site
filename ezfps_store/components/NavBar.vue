@@ -143,11 +143,13 @@ async function log_out(){
 
 const {data: { session }} = await supabase.auth.getSession()
 console.log(user)
+
 const products = [
   { name: 'ezfps app', description: 'Modern system optimizer', href: '/download', icon: ComputerDesktopIcon },
-  { name: 'telegram payments bot', description: 'Subscribe to windows optimizer plans', href: 'https://t.me/ezfps_bot', icon: ShoppingBagIcon }
-  { name: 'mobile optimizer: soon', description: 'Optimize your phone without troubles', href: 'https://t.me/ezfps_bot', icon: DevicePhoneMobileIcon }
+  { name: 'telegram payments bot', description: 'Subscribe to windows optimizer plans', href: 'https://t.me/ezfps_bot', icon: ShoppingBagIcon },
+  { name: 'mobile optimizer: soon', description: 'Optimize your phone without troubles', href: '#', icon: DevicePhoneMobileIcon }
 ]
+
 const callsToAction = [
   { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
   { name: 'Contact sales', href: '#', icon: PhoneIcon },
