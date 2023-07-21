@@ -47,13 +47,13 @@
           </transition>
         </Popover>
 
-        <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Subscribe</a>
-        <a href="#" class="text-sm font-semibold leading-6 text-gray-900">About us</a>
-        <NuxtLink to="/introduction"><a href="#" class="text-sm font-semibold leading-6 text-gray-900">Get Started</a></NuxtLink>
+        <NuxtLink to="/subscribtion"><a class="text-sm font-semibold leading-6 text-gray-900">Subscribe</a></NuxtLink>
+        <NuxtLink to="/about"><a class="text-sm font-semibold leading-6 text-gray-900">About us</a></NuxtLink>
+        <NuxtLink to="/introduction"><a class="text-sm font-semibold leading-6 text-gray-900">Get Started</a></NuxtLink>
       </PopoverGroup>
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
         <NuxtLink to="/signin"><a v-if="session == null" class="text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a></NuxtLink>
-        <NuxtLink to="/signin"><a v-if="session != null" class="text-sm font-semibold leading-6 text-gray-900">Log out <span aria-hidden="true">&rarr;</span></a></NuxtLink>
+        <a @click="log_out" v-if="session != null" class="text-sm font-semibold leading-6 text-gray-900">Log out <span aria-hidden="true">&rarr;</span></a>
       </div>
     </nav>
     <Dialog as="div" class="lg:hidden" @close="mobileMenuOpen = false" :open="mobileMenuOpen">
