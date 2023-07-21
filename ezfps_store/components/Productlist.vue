@@ -13,7 +13,9 @@
                 <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
                   <img :src="feature.icon" :alt="feature.alt">
                 </div>
+                <div class="pl-3 sm:pl-0">
                 {{ feature.name }}
+                </div>
               </dt>
               <dd class="mt-2 text-base leading-7 text-gray-600">{{ feature.description }}</dd>
             </div>
