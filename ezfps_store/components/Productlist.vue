@@ -2,9 +2,9 @@
   <div class="bg-white py-24 sm:py-32">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="mx-auto max-w-2xl lg:text-center">
-        <h2 class="text-base font-semibold leading-7 text-indigo-600">Deploy faster</h2>
-        <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Everything you need to deploy your app</p>
-        <p class="mt-6 text-lg leading-8 text-gray-600">Quis tellus eget adipiscing convallis sit sit eget aliquet quis. Suspendisse eget egestas a elementum pulvinar et feugiat blandit at. In mi viverra elit nunc.</p>
+        <h2 class="text-base font-semibold leading-7 text-indigo-600">Проекты</h2>
+        <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Наши проекты и системы</p>
+        <p class="mt-6 text-lg leading-8 text-gray-600">Наши продукты максимально эффективно выполняют свою цель - оптимизируют ваш пк и удаляют лишние кэш файлы</p>
       </div>
       <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
         <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
@@ -30,14 +30,14 @@
     {
       name: 'ezfps app',
       description:
-        'Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa.',
+        'Приложение на Windows для оптимизации пк без лишних действий',
       icon: "https://i.ibb.co/f2QNQp0/icon.png",
       alt: "ezfps logo"
     },
     {
       name: 'Telegram Bot',
       description:
-        'Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.',
+        'Телеграм бот для продажи временный подписок для приложения ezfps',
       icon: 'telegram.svg',
       alt: "telegram logo"
     }
