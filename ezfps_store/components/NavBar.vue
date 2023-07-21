@@ -79,7 +79,6 @@
                 </DisclosureButton>
                 <DisclosurePanel class="mt-2 space-y-2">
                   <NuxtLink v-for="item in [...products, ...callsToAction]" :to="item.href"> <DisclosureButton :key="item.name" as="a" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">{{ item.name }}</DisclosureButton></NuxtLink>
-                  <DisclosureButton :key="mobile" as="a" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-500 hover:bg-gray-50">Mobile optimizer: soon</DisclosureButton>
                 </DisclosurePanel>
               </Disclosure>
               <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Features</a>
@@ -142,8 +141,9 @@ async function log_out(){
 const {data: { session }} = await supabase.auth.getSession()
 console.log(user)
 const products = [
-  { name: 'ezfps app', description: 'Get a better understanding of your traffic', href: '/download', icon: ChartPieIcon },
-  { name: 'telegram bot', description: 'Speak directly to your customers', href: 'https://t.me/ezfps_bot', icon: CursorArrowRaysIcon }
+  { name: 'ezfps app', description: 'Modern system optimizer', href: '/download', icon: ChartPieIcon },
+  { name: 'telegram payments bot', description: 'Subscribe to windows optimizer plans', href: 'https://t.me/ezfps_bot', icon: CursorArrowRaysIcon }
+  { name: 'mobile optimizer: soon', description: 'Optimize your phone without troubles', href: 'https://t.me/ezfps_bot', icon: CursorArrowRaysIcon }
 ]
 const callsToAction = [
   { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
