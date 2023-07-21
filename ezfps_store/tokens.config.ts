@@ -2,7 +2,7 @@ import { defineTheme } from 'pinceau'
 
 export default defineTheme({
   color: {
-    black: '#0B0A0A',
+    black: '#424242',
     // Primary is modified lightblue
     primary: {
       50: '#F1FCFF',
@@ -100,7 +100,7 @@ export default defineTheme({
     body: {
       backgroundColor: {
         initial: '{color.white}',
-        dark: '{color.black}'
+        dark: '{color.white}'
       },
       color: {
         initial: '{color.gray.800}',
