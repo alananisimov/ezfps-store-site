@@ -10,7 +10,7 @@
           <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
             <div v-for="feature in features" :key="feature.name" class="relative justify-center mx-auto">
               <dt class="text-base font-semibold leading-7 text-gray-900">
-                <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                <div class="relative left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
                   <img :src="feature.icon" :alt="feature.alt">
                 </div>
                 <div class="ml-5 sm:ml-0">
