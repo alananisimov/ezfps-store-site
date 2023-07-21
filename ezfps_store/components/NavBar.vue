@@ -87,6 +87,7 @@
             </div>
             <div class="py-6">
               <NuxtLink to="/signin"> <a v-if="session == null" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log in</a></NuxtLink>
+              <a @click="log_out" v-if="session != null" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log out</a>
             </div>
           </div>
         </div>
@@ -129,8 +130,13 @@ import {
 } from '@heroicons/vue/24/outline'
 
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/vue/20/solid'
+
 const supabase = useSupabaseClient()
 const { data: { user } } = await supabase.auth.getUser()
+const log_out = () => {
+  const { error } = await supabase.auth.signOut()
+  console.log(error)
+}
 const {data: { session }} = await supabase.auth.getSession()
 console.log(user)
 const products = [
