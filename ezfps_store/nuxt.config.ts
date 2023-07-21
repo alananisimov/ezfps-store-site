@@ -12,6 +12,11 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  head: {
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: 'icon.png' }
+    ]
+  },
   buildModules: [
     '@nuxtjs/google-fonts'
   ],
