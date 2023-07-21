@@ -78,7 +78,8 @@
                   <ChevronDownIcon :class="[open ? 'rotate-180' : '', 'h-5 w-5 flex-none']" aria-hidden="true" />
                 </DisclosureButton>
                 <DisclosurePanel class="mt-2 space-y-2">
-                  <DisclosureButton v-for="item in [...products, ...callsToAction]" :key="item.name" as="a" :href="item.href" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">{{ item.name }}</DisclosureButton>
+                  <NuxtLink v-for="item in [...products, ...callsToAction]" :to="item.href"> <DisclosureButton :key="item.name" as="a" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">{{ item.name }}</DisclosureButton></NuxtLink>
+                  <DisclosureButton :key="mobile" as="a" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-500 hover:bg-gray-50">Mobile optimizer: soon</DisclosureButton>
                 </DisclosurePanel>
               </Disclosure>
               <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Features</a>
@@ -137,14 +138,12 @@ async function log_out(){
   const { error } = await supabase.auth.signOut()
   console.log(error)
 }
+
 const {data: { session }} = await supabase.auth.getSession()
 console.log(user)
 const products = [
-  { name: 'ezfps app', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
-  { name: 'telegram bot', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon },
-  { name: 'Security', description: 'Your customers’ data will be safe and secure', href: '#', icon: FingerPrintIcon },
-  { name: 'Integrations', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon },
-  { name: 'Automations', description: 'Build strategic funnels that will convert', href: '#', icon: ArrowPathIcon },
+  { name: 'ezfps app', description: 'Get a better understanding of your traffic', href: '/download', icon: ChartPieIcon },
+  { name: 'telegram bot', description: 'Speak directly to your customers', href: 'https://t.me/ezfps_bot', icon: CursorArrowRaysIcon }
 ]
 const callsToAction = [
   { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
