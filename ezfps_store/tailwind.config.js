@@ -15,6 +15,7 @@ module.exports = {
       }
   }},
   plugins: [],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {

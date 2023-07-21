@@ -3,8 +3,8 @@
   
   
 </template>
-<script>
-
+<script setup>
+localStorage.theme = 'light'
 </script>
 <style>
 @tailwind base;
