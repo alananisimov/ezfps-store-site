@@ -11,7 +11,7 @@
             <div v-for="feature in features" :key="feature.name" class="relative pl-16">
               <dt class="text-base font-semibold leading-7 text-gray-900">
                 <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
-                  <img :src="feature.icon">
+                  <img :src="feature.icon" :alt="feature.alt">
                 </div>
                 {{ feature.name }}
               </dt>
@@ -32,24 +32,28 @@
       description:
         'Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa.',
       icon: "https://i.ibb.co/f2QNQp0/icon.png",
+      alt: "ezfps logo"
     },
     {
       name: 'Telegram Bot',
       description:
         'Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.',
       icon: 'telegram.svg',
+      alt: "telegram logo"
     },
     {
       name: 'Simple queues',
       description:
         'Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.',
       icon: ArrowPathIcon,
+      alt: ""
     },
     {
       name: 'Advanced security',
       description:
         'Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.',
       icon: FingerPrintIcon,
+      alt: ""
     },
   ]
   </script>
