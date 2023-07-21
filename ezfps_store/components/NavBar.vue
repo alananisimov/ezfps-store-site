@@ -17,7 +17,7 @@
       <PopoverGroup class="hidden lg:flex lg:gap-x-12 ">
         <Popover class="relative">
           <PopoverButton class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
-            Product
+            Наши проекты
             <ChevronDownIcon class="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
           </PopoverButton>
 
@@ -47,13 +47,13 @@
           </transition>
         </Popover>
 
-        <NuxtLink to="/subscribtion"><a class="text-sm font-semibold leading-6 text-gray-900">Subscribe</a></NuxtLink>
-        <NuxtLink to="/about"><a class="text-sm font-semibold leading-6 text-gray-900">About us</a></NuxtLink>
-        <NuxtLink to="/introduction"><a class="text-sm font-semibold leading-6 text-gray-900">Get Started</a></NuxtLink>
+        <NuxtLink to="/subscribtion"><a class="text-sm font-semibold leading-6 text-gray-900">Подписаться</a></NuxtLink>
+        <NuxtLink to="/about"><a class="text-sm font-semibold leading-6 text-gray-900">О нас</a></NuxtLink>
+        <NuxtLink to="/introduction"><a class="text-sm font-semibold leading-6 text-gray-900">Начать!</a></NuxtLink>
       </PopoverGroup>
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-        <NuxtLink to="/signin"><a v-if="session == null" class="text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a></NuxtLink>
-        <a @click="log_out" v-if="session != null" class="text-sm font-semibold leading-6 text-gray-900">Log out <span aria-hidden="true">&rarr;</span></a>
+        <NuxtLink to="/signin"><a v-if="session == null" class="text-sm font-semibold leading-6 text-gray-900">Войти <span aria-hidden="true">&rarr;</span></a></NuxtLink>
+        <a @click="log_out" v-if="session != null" class="text-sm font-semibold leading-6 text-gray-900">Выйти <span aria-hidden="true">&rarr;</span></a>
       </div>
     </nav>
     <Dialog as="div" class="lg:hidden" @close="mobileMenuOpen = false" :open="mobileMenuOpen">
@@ -74,16 +74,16 @@
             <div class="space-y-2 py-6">
               <Disclosure as="div" class="-mx-3" v-slot="{ open }">
                 <DisclosureButton class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                  Product
+                  Наши продукты
                   <ChevronDownIcon :class="[open ? 'rotate-180' : '', 'h-5 w-5 flex-none']" aria-hidden="true" />
                 </DisclosureButton>
                 <DisclosurePanel class="mt-2 space-y-2">
                   <NuxtLink v-for="item in [...products, ...callsToAction]" :to="item.href"> <DisclosureButton :key="item.name" as="a" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">{{ item.name }}</DisclosureButton></NuxtLink>
                 </DisclosurePanel>
               </Disclosure>
-              <NuxtLink to="/subscribtion"><a class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Subscribe</a></NuxtLink>
-              <NuxtLink to="/about"></NuxtLink><a class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">About us</a><NuxtLink/>
-              <NuxtLink to="/introduction"><a class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Get Started</a></NuxtLink>
+              <NuxtLink to="/subscribtion"><a class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Подписаться</a></NuxtLink>
+              <NuxtLink to="/about"></NuxtLink><a class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">О нас</a><NuxtLink/>
+              <NuxtLink to="/introduction"><a class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Начать!</a></NuxtLink>
             </div>
             <div class="py-6">
               <NuxtLink to="/signin"> <a v-if="session == null" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log in</a></NuxtLink>
@@ -147,7 +147,7 @@ console.log(user)
 const products = [
   { name: 'ezfps app', description: 'Современный оптимизатор ПК', href: '/download', icon: ComputerDesktopIcon },
   { name: 'telegram bot', description: 'Купить доступ к нашему оптимизатору', href: 'https://t.me/ezfps_bot', icon: ShoppingBagIcon },
-  { name: 'mobile optimizer: soon', description: 'Оптимизируй свой телефон без проблем', href: '#', icon: DevicePhoneMobileIcon }
+  { name: 'mobile optimizer: скоро', description: 'Оптимизируй свой телефон без проблем', href: '#', icon: DevicePhoneMobileIcon }
 ]
 
 const callsToAction = [
