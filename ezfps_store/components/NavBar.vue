@@ -151,8 +151,7 @@ const products = [
 ]
 
 const callsToAction = [
-  { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
-  { name: 'Contact sales', href: '#', icon: PhoneIcon },
+  
 ]
 
 const mobileMenuOpen = ref(false)
