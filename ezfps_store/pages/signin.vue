@@ -12,7 +12,7 @@
   </button>
 </div>
     <div class="flex flex-col items-center justify-center px-6 pb-24 mx-auto h-screen lg:py-0 ">
-        <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
+        <a href="#" class="hidden sm:flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
             <img class="w-12 h-12 mr-2" src="https://i.ibb.co/F34tqJT/logo.png" alt="logo">
             ezfps    
         </a>
