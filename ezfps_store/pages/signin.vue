@@ -75,14 +75,20 @@
   const password = ref('')
   const GoogleOauthLogin = async () =>{
 const { data, error } = await supabase.auth.signInWithOAuth({
-  provider: 'google'
+  provider: 'google',
+  options: {
+      redirectTo: 'https://www.ezfps.store'
+    }
 })
 const { session, user } = data
   }
   const GithubOauthLogin = async () =>{
     
     const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: 'github'
+      provider: 'github',
+      options: {
+      redirectTo: 'https://www.ezfps.store'
+    }
     })
     const { data: sessiondata, error: sessionerror } = await supabase.auth.refreshSession()
     const { session, user } = data

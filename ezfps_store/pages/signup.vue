@@ -73,7 +73,7 @@ const supabase = useSupabaseClient()
         email: email.value, 
         password: password.value,
         options: {
-        emailRedirectTo: 'localhost:3000'
+        emailRedirectTo: 'https://www.ezfps.store'
         }
         })
       if (error) throw error
