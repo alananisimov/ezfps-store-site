@@ -3,7 +3,6 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxtjs/supabase', '@nuxtjs/color-mode'],
   extends: '@nuxt-themes/docus',
-  serverMiddleware: ['~/api/testapi' ],
   colorMode: {
     classSuffix: ''
   },
