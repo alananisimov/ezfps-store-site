@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/supabase', '@nuxtjs/color-mode'],
   extends: '@nuxt-themes/docus',
   serverMiddleware: [
-    { path: '/api', handler: '~/server-middleware/testapi.js' }
+    { path: '/api', handler: '~/api/testapi.js' }
   ],
   colorMode: {
     classSuffix: ''
