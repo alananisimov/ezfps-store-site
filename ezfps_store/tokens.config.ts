@@ -18,15 +18,15 @@ export default defineTheme({
     },
     gray: {
       50: '#FBFBFB',
-      100: '#F6F5F4',
-      200: '#ECEBE8',
-      300: '#DBD9D3',
-      400: '#ADA9A4',
-      500: '#97948F',
-      600: '#67635D',
-      700: '#36332E',
-      800: '#201E1B',
-      900: '#121110'
+      100: '#FBFBFB',
+      200: '#FBFBFB',
+      300: '#FBFBFB',
+      400: '#FBFBFB',
+      500: '#FBFBFB',
+      600: '#FBFBFB',
+      700: '#FBFBFB',
+      800: '#FBFBFB',
+      900: '#FBFBFB'
     },
     red: {
       50: '#FFF9F8',
