@@ -11,7 +11,7 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      link: [{ rel: 'icon', type: 'image/x-icon', href: '~/static/icon.png' }],
+      link: [{ rel: 'icon', type: 'image/x-icon', href: '/icon.png' }],
     }
   },
   
