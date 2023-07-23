@@ -1,5 +1,5 @@
 <template>
-  <link rel="icon" type="image/x-icon" href="icon.png">
+  <link rel="icon" type="image/x-icon" href="ezfps.store/icon.png">
   <NavBar/>
   
   
