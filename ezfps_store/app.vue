@@ -1,6 +1,6 @@
 <template>
   <head>
-  <link rel='icon' type='image/x-icon' href='/img/favicon.ico'>
+  <link rel='icon' type='image/x-icon' href='https://www.ezfps.store/img/favicon.ico'>
 </head>
   <NavBar/>
   
