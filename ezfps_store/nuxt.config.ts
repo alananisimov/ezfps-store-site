@@ -3,10 +3,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxtjs/supabase', '@nuxtjs/color-mode'],
   extends: '@nuxt-themes/docus',
-
-  colorMode: {
-    classSuffix: ''
-  },
+  pwa: { icon: { source: '~/static/icon.png' } },
   postcss: {
     plugins: {
       tailwindcss: {},
@@ -16,6 +13,7 @@ export default defineNuxtConfig({
   
   
   buildModules: [
-    '@nuxtjs/google-fonts'
+    '@nuxtjs/google-fonts',
+    '@nuxtjs/pwa'
   ],
 })
