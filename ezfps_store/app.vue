@@ -1,4 +1,5 @@
 <template>
+  <link rel="icon" type="image/x-icon" href="icon.png">
   <NavBar/>
   
   
