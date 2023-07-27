@@ -7,6 +7,7 @@ module.exports = {
     "./plugins/**/*.{js,ts}",
     "./nuxt.config.{js,ts}",
     "./app.vue",
+    "./node_modules/flowbite/**/*.{js,ts}"
   ],
   theme: {
     extend: {
@@ -14,7 +15,7 @@ module.exports = {
         'fpatt': "https://i.ibb.co/n666LzW/wepik-export-20230720101813-Irl2-1.png"
       }
   }},
-  plugins: [],
+  plugins: [require('flowbite/plugin')],
   theme: {
     extend: {
       colors: {
