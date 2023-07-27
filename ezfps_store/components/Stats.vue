@@ -27,7 +27,7 @@
             />
           </DisclosureButton>
           <DisclosurePanel class="px-4 pt-4 pb-2 text-sm text-gray-500">
-            Свяжитесь с нами через в <a href="https://t.me/hollz69" target="_blank" class="underline">telegram</a>. Мы постараемя ответить вам скорее 
+            Свяжитесь с нами через <a href="https://t.me/hollz69" target="_blank" class="underline">telegram</a>. Мы постараемя ответить вам скорее 
           </DisclosurePanel>
         </Disclosure>
       </div>
