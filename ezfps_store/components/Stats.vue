@@ -1,8 +1,8 @@
 <template>
     <div class="w-full px-4 pt-16">
     <h2 class="text-4xl font-bold dark:text-white my-16 text-center justify-center ">FAQ</h2>
-      <div class="mx-auto w-full max-w-md rounded-2xl bg-white p-2">
-        <Disclosure v-slot="{ open }" class="mb-64">
+      <div class="mx-auto w-full max-w-md rounded-2xl bg-white p-2 mb-64">
+        <Disclosure v-slot="{ open }">
           <DisclosureButton
             class="flex w-full justify-between rounded-lg bg-purple-100 px-4 py-2 text-left text-sm font-medium text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
           >
