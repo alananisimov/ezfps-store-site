@@ -5,4 +5,5 @@
    <meta icon="src: 'icon.png', sizes: '1000x1000'">
    <Hero/>
    <Productlist/>
+   <Stats/>
 </template>
