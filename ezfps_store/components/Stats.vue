@@ -20,7 +20,7 @@
           <DisclosureButton
             class="flex w-full justify-between rounded-lg bg-purple-100 px-4 py-2 text-left text-sm font-medium text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
           >
-            <span>Do you offer technical support?</span>
+            <span>Нуждаетесь в технической поддержке?</span>
             <ChevronUpIcon
               :class="open ? 'rotate-180 transform' : ''"
               class="h-5 w-5 text-purple-500"
