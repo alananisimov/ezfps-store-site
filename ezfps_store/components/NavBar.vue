@@ -50,6 +50,7 @@
         <NuxtLink to="/subscribtion"><a class="text-sm font-semibold leading-6 text-gray-900">Подписаться</a></NuxtLink>
         <NuxtLink to="/about"><a class="text-sm font-semibold leading-6 text-gray-900">О нас</a></NuxtLink>
         <NuxtLink to="/introduction"><a class="text-sm font-semibold leading-6 text-gray-900">Начать!</a></NuxtLink>
+        <UButton label="Show toast" @click="toast.add({ title: 'Hello world!' })" />
       </PopoverGroup>
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
         <NuxtLink to="/signin"><a v-if="session == null" class="text-sm font-semibold leading-6 text-gray-900">Войти <span aria-hidden="true">&rarr;</span></a></NuxtLink>
