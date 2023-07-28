@@ -1,6 +1,8 @@
 <template>
+  <UContainer>
   <NavBar/>
-  
+  </UContainer>  
+  <UNotifications />
 </template>
 <script setup>
 </script>
