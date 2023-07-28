@@ -1,6 +1,6 @@
 <template>
   <NavBar/>
-  
+  <MyFooter/>
   
 </template>
 <script setup>
