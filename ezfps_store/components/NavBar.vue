@@ -50,7 +50,6 @@
         <NuxtLink to="/subscribtion"><a class="text-sm font-semibold leading-6 text-gray-900">Подписаться</a></NuxtLink>
         <NuxtLink to="/about"><a class="text-sm font-semibold leading-6 text-gray-900">О нас</a></NuxtLink>
         <NuxtLink to="/introduction"><a class="text-sm font-semibold leading-6 text-gray-900">Начать!</a></NuxtLink>
-        <UButton label="Show toast" @click="toast.add({ title: 'Hello world!' })" />
       </PopoverGroup>
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
         <NuxtLink to="/signin"><a v-if="session == null" class="text-sm font-semibold leading-6 text-gray-900">Войти <span aria-hidden="true">&rarr;</span></a></NuxtLink>
@@ -85,7 +84,6 @@
               <NuxtLink to="/subscribtion"><a class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Подписаться</a></NuxtLink>
               <NuxtLink to="/about"></NuxtLink><a class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">О нас</a><NuxtLink/>
               <NuxtLink to="/introduction"><a class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Начать!</a></NuxtLink>
-              <UButton label="Show toast" @click="toast.add({ title: 'Hello world!' })" />
             </div>
             <div class="py-6">
               <NuxtLink to="/signin"> <a v-if="session == null" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Войти</a></NuxtLink>
