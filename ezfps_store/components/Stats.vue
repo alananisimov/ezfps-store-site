@@ -4,7 +4,7 @@
       <div class="mx-auto w-full max-w-md rounded-2xl bg-white p-2 mb-64">
         <Disclosure v-slot="{ open }">
           <DisclosureButton
-            class="flex w-full justify-between rounded-lg bg-purple-100 px-4 py-2 text-left text-sm font-medium text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
+            class="flex w-full justify-between rounded-lg bg-orange-100 px-4 py-2 text-left text-sm font-medium text-orange-900 hover:bg-orange-200 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-75"
           >
             <span>Что такое ezfps?</span>
             <ChevronUpIcon
@@ -18,7 +18,7 @@
         </Disclosure>
         <Disclosure as="div" class="mt-2" v-slot="{ open }">
           <DisclosureButton
-            class="flex w-full justify-between rounded-lg bg-purple-100 px-4 py-2 text-left text-sm font-medium text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
+            class="flex w-full justify-between rounded-lg bg-orange-100 px-4 py-2 text-left text-sm font-medium text-orange-900 hover:bg-orange-200 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-75"
           >
             <span>Нуждаетесь в технической поддержке?</span>
             <ChevronUpIcon
