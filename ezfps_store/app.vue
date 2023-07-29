@@ -2,7 +2,6 @@
 
   <NavBar/>
 
-  <UNotifications />
 </template>
 <script setup>
 </script>
