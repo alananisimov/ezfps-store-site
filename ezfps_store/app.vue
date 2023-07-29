@@ -1,5 +1,5 @@
 <template>
-
+  <Banner/>
   <NavBar/>
 
 </template>
