@@ -96,7 +96,7 @@
   </header>
 
       
-      
+        <Banner/>
         <NuxtPage/>
         <MyFooter/>
       
