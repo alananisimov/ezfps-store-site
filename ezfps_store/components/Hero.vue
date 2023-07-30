@@ -20,7 +20,7 @@
       </div>
     </div>
   </div>
-  <img src="https://svgshare.com/i/vX4.svg" alt="Vector product image" class="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 hidden lg:block" width="2432" height="1442">
+  <Pudge/>
 </div>
 </div>
 </div>
