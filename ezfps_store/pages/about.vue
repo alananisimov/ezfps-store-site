@@ -6,7 +6,7 @@
         <img class="mx-auto h-12" src="https://i.ibb.co/f2QNQp0/icon.png" alt="" />
         <figure class="mt-10">
           <blockquote class="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
-            <p>“Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita voluptas culpa sapiente alias molestiae. Numquam corrupti in laborum sed rerum et corporis.”</p>
+            <p>“Наш проект приследует цель создания идеального приложения для оптимизации компьютера для игр.”</p>
           </blockquote>
           <figcaption class="mt-10">
             <img class="mx-auto h-10 w-10 rounded-full" src="https://api.iconify.design/twemoji:alien.svg" alt="ceo-avatar" />
