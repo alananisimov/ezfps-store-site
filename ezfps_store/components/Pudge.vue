@@ -12,6 +12,8 @@ import { OrbitControls, GLTFModel } from '@tresjs/cientos'
       </Suspense>
       <TresDirectionalLight :position="[4, 4, 4]" :intensity="5" cast-shadow color="bisque"/>
       <TresDirectionalLight :position="[-4, 4, -4]" :sfintensity="5" cast-shadow color="bisque"/>
+      <TresDirectionalLight :position="[4, 4, -4]" :sfintensity="5" cast-shadow color="bisque"/>
+      <TresDirectionalLight :position="[-4, 4, 4]" :sfintensity="5" cast-shadow color="bisque"/>
     </TresCanvas>
 </div>
 </template>
