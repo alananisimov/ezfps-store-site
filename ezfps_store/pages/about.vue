@@ -9,7 +9,7 @@
             <p>“Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita voluptas culpa sapiente alias molestiae. Numquam corrupti in laborum sed rerum et corporis.”</p>
           </blockquote>
           <figcaption class="mt-10">
-            <img class="mx-auto h-10 w-10 rounded-full" src="twemoji:alien" alt="ceo-avatar" />
+            <img class="mx-auto h-10 w-10 rounded-full" src="https://api.iconify.design/twemoji:alien.svg" alt="ceo-avatar" />
             <div class="mt-4 flex items-center justify-center space-x-3 text-base">
               <div class="font-semibold text-gray-900">Alexander Anisimov</div>
               <svg viewBox="0 0 2 2" width="3" height="3" aria-hidden="true" class="fill-gray-900">
