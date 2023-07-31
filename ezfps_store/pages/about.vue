@@ -21,4 +21,5 @@
         </figure>
       </div>
     </section>
+    <Links/>
   </template>
