@@ -18,10 +18,9 @@
         </a></NuxtLink>
        
       </div>
-      <Pudge/>
     </div>
   </div>
-  
+  <Pudge/>
 </div>
 </div>
 </div>
