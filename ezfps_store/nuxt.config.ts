@@ -3,15 +3,6 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxtjs/supabase', '@nuxtjs/color-mode', '@nuxthq/ui', "@tresjs/nuxt"],
   extends: '@nuxt-themes/docus',
-  ui: {
-    primary: 'orange',
-    gray: 'cool',
-    notifications: {
-      // Show toasts at the top right of the screen
-      position: 'top-0 right-0'
-    }
-
-  },
   ssr: true,
   postcss: {
     plugins: {
@@ -25,8 +16,4 @@ export default defineNuxtConfig({
     }
   },
   
-  buildModules: [
-    '@nuxtjs/google-fonts',
-    '@nuxtjs/pwa'
-  ],
 })

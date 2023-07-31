@@ -98,7 +98,6 @@
       
         <Banner/>
         <NuxtPage/>
-        <MyFooter/>
       
      
       
