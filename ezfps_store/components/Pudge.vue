@@ -10,10 +10,10 @@ import { OrbitControls, GLTFModel } from '@tresjs/cientos'
         <GLTFModel path="/scene.gltf" ref="modelRef" />
         
       </Suspense>
-      <TresDirectionalLight :position="[4, 4, 4]" :intensity="5" cast-shadow color="bisque"/>
-      <TresDirectionalLight :position="[-4, 4, -4]" :intensity="5" cast-shadow color="bisque"/>
-      <TresDirectionalLight :position="[4, 4, -4]" :intensity="5" cast-shadow color="bisque"/>
-      <TresDirectionalLight :position="[-4, 4, 4]" :intensity="5" cast-shadow color="bisque"/>
+      <TresDirectionalLight :position="[4, 4, 4]" :intensity="2" cast-shadow color="bisque"/>
+      <TresDirectionalLight :position="[-4, 4, -4]" :intensity="2" cast-shadow color="bisque"/>
+      <TresDirectionalLight :position="[4, 4, -4]" :intensity="2" cast-shadow color="bisque"/>
+      <TresDirectionalLight :position="[-4, 4, 4]" :intensity="2" cast-shadow color="bisque"/>
     </TresCanvas>
 </div>
 </template>
