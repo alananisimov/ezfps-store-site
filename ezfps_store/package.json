@@ -24,6 +24,7 @@
     "@headlessui/vue": "^1.7.14",
     "@heroicons/vue": "^2.0.18",
     "@nuxt-themes/docus": "^1.14.3",
+    "@nuxtjs/i18n": "^7.3.1",
     "@nuxtjs/pwa": "^3.3.5",
     "@supabase/supabase-js": "^2.26.0",
     "@tresjs/cientos": "^3.0.1",
