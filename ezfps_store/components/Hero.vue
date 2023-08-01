@@ -1,4 +1,5 @@
 <template>
+  <transition enter-active-class="transition ease-out duration-100" enter-from-class="transform opacity-0 scale-95" enter-to-class="transform opacity-100 scale-100" leave-active-class="transition ease-in duration-75" leave-from-class="transform opacity-100 scale-100" leave-to-class="transform opacity-0 scale-95">
   <div class="overflow-hidden bg-white py-16 text-center">
 <div class="mx-auto max-w-7xl px-6 lg:px-8">
 <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
@@ -24,4 +25,5 @@
 </div>
 </div>
 </div>
+</transition>
 </template>
