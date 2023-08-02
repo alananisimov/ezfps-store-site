@@ -1,5 +1,0 @@
-user-agent: *
-disallow: /downloads/
-Allow: /api/og/*
-user-agent: ezfps
-disallow: /uploads/
