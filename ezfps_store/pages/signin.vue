@@ -12,12 +12,9 @@
 </button>
 </div>
   <div class="flex flex-col items-center justify-center px-6 pb-24 mx-auto h-screen lg:py-0 ">
-      <a href="#" class="hidden sm:flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
-          <img class="w-12 h-12 mr-2" src="https://i.ibb.co/F34tqJT/logo.png" alt="logo">
-          ezfps    
-      </a>
-      <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
-          <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+      
+      <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 md:max-w-lg sm:max-w-md mx-16 xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+          <div class="space-y-4 md:space-y-6 sm:p-8">
               <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white text-center justify-center items-center mb-5">
                   Войти
               </h1>
@@ -77,7 +74,7 @@
 const { data, error } = await supabase.auth.signInWithOAuth({
   provider: 'google',
   options: {
-      redirectTo: 'https://www.ezfps.store'
+      redirectTo: 'http://localhost:3000/'
     }
 })
 const { session, user } = data
@@ -87,7 +84,7 @@ const { session, user } = data
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: 'github',
       options: {
-      redirectTo: 'https://www.ezfps.store'
+      redirectTo: 'http://localhost:3000'
     }
     })
     const { data: sessiondata, error: sessionerror } = await supabase.auth.refreshSession()
