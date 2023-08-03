@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ['@nuxtjs/supabase', '@nuxtjs/color-mode', '@nuxthq/ui', "@tresjs/nuxt", 'nuxt-headlessui'],
+  modules: ['@nuxtjs/supabase', '@nuxtjs/color-mode', '@nuxthq/ui', "@tresjs/nuxt", 'nuxt-headlessui', 'nuxt-og-image', '@nuxtjs/robots', 'nuxt-simple-sitemap', 'nuxt-schema-org'],
   extends: ['@nuxt-themes/docus'],
   runtimeConfig: {
     public: {
