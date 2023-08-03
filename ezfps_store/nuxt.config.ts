@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxtjs/supabase', '@nuxtjs/color-mode', '@nuxthq/ui', "@tresjs/nuxt", 'nuxt-headlessui'],
-  extends: ['@nuxt-themes/docus', 'nuxt-seo-kit'],
+  extends: ['@nuxt-themes/docus'],
   runtimeConfig: {
     public: {
       siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000/',
