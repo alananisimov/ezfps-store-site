@@ -1,5 +1,5 @@
 <template>
-  <SeoKit />
+  <link rel="icon" href="/favicon-use.png">
   <NavBar/>
 
 </template>
