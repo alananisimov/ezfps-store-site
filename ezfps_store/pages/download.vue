@@ -52,7 +52,6 @@
                 </svg>
             </a>
           </div>
-          
       </div>
   </div>
 </section >
