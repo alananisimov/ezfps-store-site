@@ -48,7 +48,7 @@
         </Popover>
 
         <NuxtLink to="/subscribtion"><a class="text-sm font-semibold leading-6 text-gray-900">Подписаться</a></NuxtLink>
-        <NuxtLink to="/about"><a class="text-sm font-semibold leading-6 text-gray-900">О нас</a></NuxtLink>
+        <NuxtLink to="/about"><a class="text-sm font-semibold leading-6 text-gray-900 cursor-pointer">О нас</a></NuxtLink>
         <NuxtLink to="/introduction"><a class="text-sm font-semibold leading-6 text-gray-900">Начать!</a></NuxtLink>
       </PopoverGroup>
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
