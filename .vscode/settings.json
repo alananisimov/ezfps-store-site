@@ -1,4 +1,7 @@
 {
     "git.ignoreLimitWarning": true,
-    "nuxt.isNuxtApp": false
+    "nuxt.isNuxtApp": false,
+    "cSpell.words": [
+        "pinceau"
+    ]
 }

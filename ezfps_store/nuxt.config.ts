@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     "@tresjs/nuxt",
     "nuxt-headlessui",
     "@nuxtseo/module",
+    'nuxt-delay-hydration'
   ],
   extends: ["@nuxt-themes/docus"],
   ssr: true,
@@ -23,6 +24,9 @@ export default defineNuxtConfig({
     name: "ezfps PC booster",
     description: "Optimize your PC faster and lighter when ever!",
     defaultLocale: "ru",
+  },
+  delayHydration: {
+    debug: process.env.NODE_ENV === 'development'
   },
   nitro: {
     compressPublicAssets: true,

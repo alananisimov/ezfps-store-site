@@ -35,6 +35,7 @@
     "@vite-pwa/nuxt": "^0.1.1",
     "express": "^4.18.2",
     "flowbite": "^1.6.6",
+    "nuxt-delay-hydration": "^1.2.2",
     "nuxt-icon": "^0.4.2",
     "postcss-custom-properties": "^13.3.2",
     "three": "^0.155.0",
