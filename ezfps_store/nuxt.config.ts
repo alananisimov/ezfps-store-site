@@ -1,9 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   modules: [
     "@vite-pwa/nuxt",
-    "@nuxtjs/supabase",
+    '@nuxtjs/supabase',
     "@nuxtjs/color-mode",
     "@nuxthq/ui",
     "@tresjs/nuxt",
@@ -11,12 +11,15 @@ export default defineNuxtConfig({
     "@nuxtseo/module",
     "nuxt-delay-hydration",
   ],
-  extends: ["@nuxt-themes/docus"],
   ssr: true,
   vite: {
     build: {
       chunkSizeWarningLimit: 1600,
     },
+  },
+  supabase: {
+    redirect: false,
+    
   },
   postcss: {
     plugins: {
