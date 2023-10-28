@@ -9,10 +9,27 @@ export default defineNuxtConfig({
     "@tresjs/nuxt",
     "nuxt-headlessui",
     "@nuxtseo/module",
-    'nuxt-delay-hydration'
+    "nuxt-delay-hydration",
   ],
   extends: ["@nuxt-themes/docus"],
   ssr: true,
+  vite: {
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks(id) {
+            if (id.includes("node_modules")) {
+              return id
+                .toString()
+                .split("node_modules/")[1]
+                .split("/")[0]
+                .toString();
+            }
+          },
+        },
+      },
+    },
+  },
   postcss: {
     plugins: {
       tailwindcss: {},
@@ -26,7 +43,7 @@ export default defineNuxtConfig({
     defaultLocale: "ru",
   },
   delayHydration: {
-    debug: process.env.NODE_ENV === 'development'
+    debug: process.env.NODE_ENV === "development",
   },
   nitro: {
     compressPublicAssets: true,
