@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   modules: [
     "@vite-pwa/nuxt",
-    '@nuxtjs/supabase',
+    "@nuxtjs/supabase",
     "@nuxtjs/color-mode",
     "@nuxthq/ui",
     "@tresjs/nuxt",
@@ -11,6 +11,9 @@ export default defineNuxtConfig({
     "@nuxtseo/module",
     "nuxt-delay-hydration",
   ],
+  site: {
+    url: "https://ezfps.store",
+  },
   ssr: true,
   vite: {
     build: {
@@ -19,7 +22,6 @@ export default defineNuxtConfig({
   },
   supabase: {
     redirect: false,
-    
   },
   postcss: {
     plugins: {
