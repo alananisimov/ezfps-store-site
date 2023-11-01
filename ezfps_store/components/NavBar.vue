@@ -51,9 +51,10 @@
         <NuxtLink to="/about"><a class="text-sm font-semibold leading-6 text-gray-900 cursor-pointer">О нас</a></NuxtLink>
         <NuxtLink><a href="https://docs.ezfps.store"><a class="text-sm font-semibold leading-6 text-gray-900">Начать!</a></a></NuxtLink>
       </PopoverGroup>
-      <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+      <div class="hidden lg:flex lg:flex-1 lg:justify-end gap-x-3">
+        <span v-if="session" class="bg-blue-100 text-orange-600 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 border border-orange-900 mx-5">Аккаунт</span>
         <NuxtLink to="/signin"><a v-if="session == null" class="text-sm font-semibold leading-6 text-gray-900">Войти <span aria-hidden="true">&rarr;</span></a></NuxtLink>
-        <a @click="log_out" v-if="session != null" class="text-sm font-semibold leading-6 text-gray-900">Выйти <span aria-hidden="true">&rarr;</span></a>
+        <a @click="log_out" v-if="session != null" class="text-sm font-semibold leading-6 text-gray-900 cursor-pointer">Выйти <span aria-hidden="true">&rarr;</span></a>
       </div>
     </nav>
     <Dialog as="div" class="lg:hidden" @close="mobileMenuOpen = false" :open="mobileMenuOpen">
@@ -141,7 +142,6 @@ async function log_out(){
 }
 
 const {data: { session }} = await supabase.auth.getSession()
-console.log(user)
 
 const products = [
   { name: 'ezfps app', description: 'Современный оптимизатор ПК', href: '/download', icon: ComputerDesktopIcon },

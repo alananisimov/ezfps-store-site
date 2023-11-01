@@ -11,9 +11,6 @@ export default defineNuxtConfig({
     "@nuxtseo/module",
     "nuxt-delay-hydration",
   ],
-  site: {
-    url: "https://ezfps.store",
-  },
   ssr: true,
   vite: {
     build: {
