@@ -82,13 +82,13 @@
                   <NuxtLink v-for="item in [...products, ...callsToAction]" :to="item.href"> <DisclosureButton :key="item.name" as="a" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">{{ item.name }}</DisclosureButton></NuxtLink>
                 </DisclosurePanel>
               </Disclosure>
-              <NuxtLink to="/subscribtion"><a class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Подписаться</a></NuxtLink>
-              <NuxtLink to="/about"><a class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">О нас</a></NuxtLink>
-              <NuxtLink><a href="https://docs.ezfps.store"><a class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Начать!</a></a></NuxtLink>
+              <NuxtLink to="/subscribtion"><a class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" @click="closeMenu()">Подписаться</a></NuxtLink>
+              <NuxtLink to="/about"><a class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" @click="closeMenu()">О нас</a></NuxtLink>
+              <NuxtLink><a href="https://docs.ezfps.store"><a class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" @click="closeMenu()">Начать!</a></a></NuxtLink>
             </div>
             <div class="py-6">
-              <NuxtLink to="/signin"> <a v-if="session == null" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Войти</a></NuxtLink>
-              <a @click="log_out" v-if="session != null" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Выйти</a>
+              <NuxtLink to="/signin"> <a v-if="session == null" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" @click="closeMenu()">Войти</a></NuxtLink>
+              <a @click="log_out && closeMenu()" v-if="session != null" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Выйти</a>
             </div>
           </div>
         </div>
@@ -138,9 +138,11 @@ const supabase = useSupabaseClient()
 const { data: { user } } = await supabase.auth.getUser()
 async function log_out(){
   const { error } = await supabase.auth.signOut()
-  console.log(error)
+  if (error) throw error
 }
-
+const closeMenu = () => {
+  mobileMenuOpen.value = false
+}
 const {data: { session }} = await supabase.auth.getSession()
 
 const products = [
