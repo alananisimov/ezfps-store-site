@@ -13,7 +13,7 @@
             />
           </DisclosureButton>
           <DisclosurePanel class="px-4 pt-4 pb-2 text-sm sm:text-md text-gray-500">
-            Ezfps это программа для оптимизации пк с <a href="https://github.com/alananisimov/ezfps-app-site" class="underline">открытым исходным кодом</a> основанная на .ps1 скриптах. Наша цель создать лучший из возможных оптимизаторов для Windows. 
+            Ezfps это программа для оптимизации пк с <a href="https://github.com/alananisimov/ezfpsAppSite" class="underline">открытым исходным кодом</a> основанная на кастомных ps1 и bash скриптах. Наша цель создать лучший из возможных оптимизаторов для всех операционных систем. 
           </DisclosurePanel>
         </Disclosure>
         <Disclosure as="div" class="mt-2" v-slot="{ open }">
@@ -27,7 +27,7 @@
             />
           </DisclosureButton>
           <DisclosurePanel class="px-4 pt-4 pb-2 text-sm sm:text-md text-gray-500">
-            Свяжитесь с нами через <a href="https://t.me/hollz69" target="_blank" class="underline">telegram</a>. Мы постараемя ответить вам скорее 
+            Свяжитесь с нами через <a href="https://t.me/hollz69" target="_blank" class="underline">telegram</a>. Мы постараемя ответить вам как можно скорее 
           </DisclosurePanel>
         </Disclosure>
       </div>

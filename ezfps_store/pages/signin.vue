@@ -22,12 +22,12 @@
         </svg>
       </button>
     </div>
-    <div class="flex flex-col items-center justify-center px-6 mx-auto h-screen my-auto sm:-mt-20">
+    <div class="flex flex-col items-center justify-center px-6 mx-auto h-screen my-auto tall:sm:-mt-20">
 
-      <div class="w-full bg-white rounded-lg shadow md:mt-0 md:max-w-lg sm:max-w-md mx-16 xl:p-0">
+      <div class="w-full bg-white rounded-lg md:mt-0 md:max-w-lg sm:max-w-md mx-16 xl:p-0">
         <div class="space-y-4 md:space-y-6 sm:p-8">
           <h1
-            class="hidden text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl text-center justify-center items-center mb-5 tall:flex">
+            class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl text-center justify-center items-center mb-5">
             Войти
           </h1>
           <form class="space-y-4 md:space-y-6 " @submit.prevent="handleLogin">
@@ -55,31 +55,66 @@
             </div>
             <div class="inline-flex items-center justify-center w-full">
               <hr class="w-full h-px my-4 bg-gray-200 border-0">
-              <span class="absolute px-3 font-medium text-gray-900 -translate-x-1/2 bg-white left-1/2">or</span>
+              <span class="absolute px-3 font-medium text-gray-900 -translate-x-1/2 bg-white left-1/2">или</span>
             </div>
             <div>
               <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Ваш email</label>
               <input type="email" name="email" id="email" v-model="email"
                 class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2.5"
-                placeholder="" required="true">
+                placeholder="elonmusk@usa.com" required="true">
             </div>
-            <div>
+            <div class="select-none">
               <label for="password" class="block mb-2 text-sm font-medium text-gray-900">Пароль</label>
-              <input type="password" name="password" v-model="password" id="password" placeholder="••••••••"
-                class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2.5"
-                required="true">
+              <div class="inline-flex w-full bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg">
+                <input name="password" v-model="password" id="password" :type="passwordVisible ? 'text' : 'password'"
+                  :placeholder="passwordVisible ? '' : '•••••'"
+                  class="rounded-lg border-transparent focus:border w-full p-2.5 focus:ring-orange-500 focus:border-orange-500"
+                  required="true">
+                <!-- Add an eye icon to toggle password visibility -->
+                <span @click="togglePasswordVisibility" class="cursor-pointer w-fit pt-2.5 px-2">
+                  <span v-if="passwordVisible"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                      viewBox="0 0 24 24">
+                      <path fill="currentColor"
+                        d="M12 19c.946 0 1.81-.103 2.598-.281l-1.757-1.757c-.273.021-.55.038-.841.038c-5.351 0-7.424-3.846-7.926-5a8.642 8.642 0 0 1 1.508-2.297L4.184 8.305c-1.538 1.667-2.121 3.346-2.132 3.379a.994.994 0 0 0 0 .633C2.073 12.383 4.367 19 12 19zm0-14c-1.837 0-3.346.396-4.604.981L3.707 2.293L2.293 3.707l18 18l1.414-1.414l-3.319-3.319c2.614-1.951 3.547-4.615 3.561-4.657a.994.994 0 0 0 0-.633C21.927 11.617 19.633 5 12 5zm4.972 10.558l-2.28-2.28c.19-.39.308-.819.308-1.278c0-1.641-1.359-3-3-3c-.459 0-.888.118-1.277.309L8.915 7.501A9.26 9.26 0 0 1 12 7c5.351 0 7.424 3.846 7.926 5c-.302.692-1.166 2.342-2.954 3.558z" />
+                    </svg></span>
+                  <span v-else class=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                      viewBox="0 0 24 24">
+                      <path
+                        d="M12 5c-7.633 0-9.927 6.617-9.948 6.684L1.946 12l.105.316C2.073 12.383 4.367 19 12 19s9.927-6.617 9.948-6.684l.106-.316l-.105-.316C21.927 11.617 19.633 5 12 5zm0 11c-2.206 0-4-1.794-4-4s1.794-4 4-4s4 1.794 4 4s-1.794 4-4 4z"
+                        fill="currentColor" />
+                      <path d="M12 10c-1.084 0-2 .916-2 2s.916 2 2 2s2-.916 2-2s-.916-2-2-2z" fill="currentColor" />
+                    </svg></span>
+                </span>
+              </div>
             </div>
-            <div>
+            <div class="select-none">
               <label for="confirm-password" class="block mb-2 text-sm font-medium text-gray-900">Подтвердите
                 пароль</label>
-              <input type="password" name="confirm-password" id="confirm-password" placeholder="••••••••"
-                class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2.5"
-                required="true">
+              <div class="inline-flex w-full bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg">
+                <input :type="password1Visible ? 'text' : 'password'" name="confirm-password" id="confirm-password"
+                  :placeholder="password1Visible ? '' : '•••••'"
+                  class="rounded-lg border-transparent focus:border w-full p-2.5 focus:ring-orange-500 focus:border-orange-500"
+                  required="true">
+                <span @click="toggle1PasswordVisibility" class="cursor-pointer w-fit pt-2.5 px-2">
+                  <span v-if="password1Visible"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                      viewBox="0 0 24 24">
+                      <path fill="currentColor"
+                        d="M12 19c.946 0 1.81-.103 2.598-.281l-1.757-1.757c-.273.021-.55.038-.841.038c-5.351 0-7.424-3.846-7.926-5a8.642 8.642 0 0 1 1.508-2.297L4.184 8.305c-1.538 1.667-2.121 3.346-2.132 3.379a.994.994 0 0 0 0 .633C2.073 12.383 4.367 19 12 19zm0-14c-1.837 0-3.346.396-4.604.981L3.707 2.293L2.293 3.707l18 18l1.414-1.414l-3.319-3.319c2.614-1.951 3.547-4.615 3.561-4.657a.994.994 0 0 0 0-.633C21.927 11.617 19.633 5 12 5zm4.972 10.558l-2.28-2.28c.19-.39.308-.819.308-1.278c0-1.641-1.359-3-3-3c-.459 0-.888.118-1.277.309L8.915 7.501A9.26 9.26 0 0 1 12 7c5.351 0 7.424 3.846 7.926 5c-.302.692-1.166 2.342-2.954 3.558z" />
+                    </svg></span>
+                  <span v-else class=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                      viewBox="0 0 24 24">
+                      <path
+                        d="M12 5c-7.633 0-9.927 6.617-9.948 6.684L1.946 12l.105.316C2.073 12.383 4.367 19 12 19s9.927-6.617 9.948-6.684l.106-.316l-.105-.316C21.927 11.617 19.633 5 12 5zm0 11c-2.206 0-4-1.794-4-4s1.794-4 4-4s4 1.794 4 4s-1.794 4-4 4z"
+                        fill="currentColor" />
+                      <path d="M12 10c-1.084 0-2 .916-2 2s.916 2 2 2s2-.916 2-2s-.916-2-2-2z" fill="currentColor" />
+                    </svg></span>
+                </span>
+              </div>
             </div>
             <div class="flex items-start">
               <div class="flex items-center h-5">
                 <input id="terms" aria-describedby="terms" type="checkbox"
-                  class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300"
+                  class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3"
                   required="">
               </div>
               <div class="ml-3 text-sm">
@@ -128,22 +163,28 @@ const GithubOauthLogin = async () => {
   console.log(data)
 }
 const handleLogin = async () => {
-  try {
+    newerror.value = false
     loading.value = true
-    await supabase.auth.signInWithPassword({
+    let { data, error } = await supabase.auth.signInWithPassword({
       email: email.value,
       password: password.value,
       redirectTo: 'https://ezfps.store'
 
-    }).then((data) => {
-      navigateTo("/")
+    }).finally(()=>{
+      loading.value = false
     })
-
-  } catch (error) {
-    newerror.value = true
-    errortext.value = error.error_description || error.message
-  } finally {
-    loading.value = false
+    if (error) {
+      newerror.value = true
+      errortext.value = error.error_description || error.message
+    }
+  
   }
-}
+const passwordVisible = ref(false);
+const password1Visible = ref(false)
+const togglePasswordVisibility = () => {
+  passwordVisible.value = !passwordVisible.value;
+};
+const toggle1PasswordVisibility = () => {
+  password1Visible.value = !password1Visible.value;
+};
 </script>
