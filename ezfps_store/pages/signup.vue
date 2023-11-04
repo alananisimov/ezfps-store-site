@@ -133,9 +133,11 @@ const handleLogin = async () => {
       options: {
         emailRedirectTo: 'https://www.ezfps.store'
       }
+    }).then((data) => {
+      closeWebApp()
     })
     if (error) throw error
-    closeWebApp()
+
     emailverification.value = true
   } catch (error) {
     newerror.value = true
@@ -168,29 +170,33 @@ const GithubOauthLogin = async () => {
 
 </script>
 <script>
-if (typeof window !== "undefined") {
-  if (window.Telegram !== undefined && window.Telegram.WebApp != undefined) {
-    let tg = window.Telegram.WebApp;
+let closeWebApp = () => {}
+onMounted(()=>{
+  const isclientside = typeof window !== 'undefined' && window.Telegram !== 'undefined'
+if (isclientside) {
+  
 
-    tg.expand();
-    tg.MainButton.textColor = "#FFFFFF";
-    tg.MainButton.color = "#ff4c00";
-    Telegram.WebApp.onEvent("mainButtonClicked", function () {
-      tg.sendData("closed");
-    });
-  }
-
+let tg = window.Telegram.WebApp;
+tg.expand();
+tg.MainButton.textColor = "#FFFFFF";
+tg.MainButton.color = "#ff4c00";
+Telegram.WebApp.onEvent("mainButtonClicked", function () {
+  tg.sendData("closed");
+});
 }
-const closeWebApp = () => {
-  if (typeof window !== "undefined") {
-    if (window.Telegram !== undefined && window.Telegram.WebApp != undefined) {
-      let tg = window.Telegram.WebApp;
-      console.log("added main button")
 
-      tg.MainButton.setText("Нажмите чтобы закрыть");
-      tg.MainButton.show();
-    }
+
+closeWebApp = () => {
+  if (isclientside) {
+  console.log("added main button")
+
+  tg.MainButton.setText("Нажмите чтобы закрыть");
+  tg.MainButton.show();
   }
 }
+})
+
+
+
 
 </script>
