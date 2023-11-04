@@ -116,12 +116,7 @@
 </template>
 
 <script setup>
-let window = any
-let tg = window.Telegram.WebApp;
 
-tg.expand();
-tg.MainButton.textColor = "#FFFFFF";
-tg.MainButton.color = "#ff4c00";
 const supabase = useSupabaseClient()
 let emailverification = ref(false)
 const loading = ref(false)
@@ -170,13 +165,32 @@ const GithubOauthLogin = async () => {
   if (error) throw error
   console.log(data)
 }
-const closeWebApp = () => {
-  console.log("added main button")
 
-  tg.MainButton.setText("Нажмите чтобы закрыть");
-  tg.MainButton.show();
+</script>
+<script>
+if (typeof window !== "undefined") {
+  if (window.Telegram !== undefined && window.Telegram.WebApp != undefined) {
+    let tg = window.Telegram.WebApp;
+
+    tg.expand();
+    tg.MainButton.textColor = "#FFFFFF";
+    tg.MainButton.color = "#ff4c00";
+    Telegram.WebApp.onEvent("mainButtonClicked", function () {
+      tg.sendData("closed");
+    });
+  }
+
 }
-Telegram.WebApp.onEvent("mainButtonClicked", function () {
-  tg.sendData("closed");
-});
+const closeWebApp = () => {
+  if (typeof window !== "undefined") {
+    if (window.Telegram !== undefined && window.Telegram.WebApp != undefined) {
+      let tg = window.Telegram.WebApp;
+      console.log("added main button")
+
+      tg.MainButton.setText("Нажмите чтобы закрыть");
+      tg.MainButton.show();
+    }
+  }
+}
+
 </script>
