@@ -116,6 +116,7 @@
 </template>
 
 <script setup>
+let window = any
 let tg = window.Telegram.WebApp;
 
 tg.expand();
