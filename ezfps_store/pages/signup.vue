@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-gray-50 dark:bg-gray-900 ">
+  <section class="bg-white dark:bg-gray-900 ">
     <div v-if="emailverification == true" id="alert-2"
       class="flex p-4 mb-4 text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
       <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
@@ -10,7 +10,8 @@
       </svg>
       <span class="sr-only">Info</span>
       <div class="ml-3 text-sm font-medium hidden sm:flex">
-        Спасибо за регистрацию, войдите в аккаунт <NuxtLink to="/signin"><a class="font-semibold underline hover:no-underline ml-1">здесь</a></NuxtLink>
+        Спасибо за регистрацию, войдите в аккаунт <NuxtLink to="/signin"><a
+            class="font-semibold underline hover:no-underline ml-1">здесь</a></NuxtLink>
       </div>
     </div>
     <div v-if="newerror == true" id="alert-2"
@@ -128,8 +129,7 @@
             <div class="flex items-start">
               <div class="flex items-center h-5">
                 <input id="terms" aria-describedby="terms" type="checkbox"
-                  class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3"
-                  required="">
+                  class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3" required="">
               </div>
               <div class="ml-3 text-sm">
                 <label for="terms" class="font-light text-gray-500">Я принимаю <a
@@ -159,25 +159,18 @@ const errortext = ref('')
 const email = ref('')
 const password = ref('')
 const handleLogin = async () => {
-  try {
-    loading.value = true
-    await supabase.auth.signUp({
-      email: email.value,
-      password: password.value,
-      options: {
-        emailRedirectTo: 'https://www.ezfps.store'
-      }
-    }).then((data) => {
-      closeWebApp()
-    })
+  loading.value = true
+  const { data, error } = await supabase.auth.signUp({
+    email: email.value,
+    password: password.value,
+    options: {
+      emailRedirectTo: 'https://www.ezfps.store'
+    }
+  })
+  if (data) closeWebApp()
+  newerror.value = true
+  errortext.value = error.message
 
-    emailverification.value = true
-  } catch (error) {
-    newerror.value = true
-    errortext.value = error.error_description || error.message
-  } finally {
-    loading.value = true
-  }
 }
 const GoogleOauthLogin = async () => {
   const { data, error } = await supabase.auth.signInWithOAuth({
