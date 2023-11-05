@@ -1,10 +1,11 @@
 <template>
   <link rel="icon" href="/favicon-use.png">
-  <NavBar/>
+    <NavBar/>
+
+  
 
 </template>
-<script setup>
-</script>
+
 <style>
 @tailwind base;
 @tailwind components;

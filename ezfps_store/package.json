@@ -38,6 +38,7 @@
     "nuxt-icon": "^0.4.2",
     "postcss-custom-properties": "^13.3.2",
     "three": "^0.155.0",
-    "tweakpane": "^4.0.1"
+    "tweakpane": "^4.0.1",
+    "vue-tg": "^0.1.1"
   }
 }

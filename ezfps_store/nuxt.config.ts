@@ -42,8 +42,7 @@ export default defineNuxtConfig({
     head: {
       link: [{ rel: "icon", type: "image/x-icon", href: "/icon.png" }],
     },
-    script: [
-      { src: 'https://telegram.org/js/telegram-web-app.js' }
-    ],
+    
+    
   },
 });

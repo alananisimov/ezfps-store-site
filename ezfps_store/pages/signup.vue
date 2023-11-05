@@ -28,7 +28,7 @@
       </div>
       <button type="button"
         class="ml-auto -mx-1.5 -my-1.5 bg-red-50 text-red-500 rounded-lg focus:ring-2 focus:ring-red-400 p-1.5 hover:bg-red-200 inline-flex h-8 w-8 dark:bg-gray-800 dark:text-red-400 dark:hover:bg-gray-700"
-        @click="emailverification = false" data-dismiss-target="#alert-2" aria-label="Close">
+        @click="newerror = false" data-dismiss-target="#alert-2" aria-label="Close">
         <span class="sr-only">Close</span>
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd"
@@ -147,10 +147,11 @@
       </div>
     </div>
   </section>
+  <component :is="'script'" src="https://telegram.org/js/telegram-web-app.js" strategy="beforeInteractive">
+  </component>
 </template>
 
 <script setup>
-
 const supabase = useSupabaseClient()
 let emailverification = ref(false)
 const loading = ref(false)
@@ -167,10 +168,12 @@ const handleLogin = async () => {
       emailRedirectTo: 'https://www.ezfps.store'
     }
   })
-  if (data) closeWebApp()
-  newerror.value = true
-  errortext.value = error.message
 
+  if (error) {
+    newerror.value = true
+    errortext.value = error.message
+  }
+  if (data) closeWebApp()
 }
 const GoogleOauthLogin = async () => {
   const { data, error } = await supabase.auth.signInWithOAuth({
@@ -180,6 +183,7 @@ const GoogleOauthLogin = async () => {
     }
   })
   if (error) throw error
+  if (data) closeWebApp()
   console.log(data)
 }
 const GithubOauthLogin = async () => {
@@ -191,6 +195,7 @@ const GithubOauthLogin = async () => {
     }
   })
   if (error) throw error
+  if (data) closeWebApp()
   console.log(data)
 }
 const passwordVisible = ref(false);
@@ -201,31 +206,12 @@ const togglePasswordVisibility = () => {
 const toggle1PasswordVisibility = () => {
   password1Visible.value = !password1Visible.value;
 };
-</script>
-<script>
-let closeWebApp = () => { }
-onMounted(() => {
-  const isclientside = typeof window !== 'undefined' && window.Telegram !== 'undefined'
-  if (isclientside) {
-
-
-    let tg = window.Telegram.WebApp;
-    tg.expand();
-    tg.MainButton.textColor = "#FFFFFF";
-    tg.MainButton.color = "#ff4c00";
-    Telegram.WebApp.onEvent("mainButtonClicked", function () {
-      tg.sendData("closed");
-    });
+const user = ref('none')
+let closeWebApp = () => {
+  if (process.browser) {
+    console.log(email.value)
+    window.Telegram.WebApp.sendData(`{"email": "${email.value}"}`)
   }
-
-  closeWebApp = () => {
-    if (isclientside) {
-      console.log("added main button")
-
-      tg.MainButton.setText("Нажмите чтобы закрыть");
-      tg.MainButton.show();
-    }
-  }
-})
-
+}
 </script>
+
