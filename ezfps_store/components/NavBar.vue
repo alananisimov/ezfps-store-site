@@ -52,7 +52,7 @@
         <NuxtLink><a href="https://docs.ezfps.store"><a class="text-sm font-semibold leading-6 text-gray-900">Начать!</a></a></NuxtLink>
       </PopoverGroup>
       <div class="hidden lg:flex lg:flex-1 lg:justify-end gap-x-3">
-        <span v-if="session" class="bg-gray-100 text-orange-600 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 border border-orange-900 mx-5">Аккаунт</span>
+        <NuxtLink to="/profile"><span v-if="session" class="bg-gray-100 text-gray-700 text-sm font-medium mr-2 px-2.5 py-0.5 rounded border border-black mx-5 cursor-pointer">Аккаунт</span></NuxtLink>
         <NuxtLink to="/signin"><a v-if="session == null" class="text-sm font-semibold leading-6 text-gray-900">Войти <span aria-hidden="true">&rarr;</span></a></NuxtLink>
         <a @click="log_out" v-if="session != null" class="text-sm font-semibold leading-6 text-gray-900 cursor-pointer">Выйти <span aria-hidden="true">&rarr;</span></a>
       </div>
@@ -87,6 +87,7 @@
               <NuxtLink><a href="https://docs.ezfps.store"><a class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" @click="closeMenu()">Начать!</a></a></NuxtLink>
             </div>
             <div class="py-6">
+              <NuxtLink to="/profile"><a @click="closeMenu()" v-if="session != null" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Аккаунт</a></NuxtLink>
               <NuxtLink to="/signin"> <a v-if="session == null" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" @click="closeMenu()">Войти</a></NuxtLink>
               <a @click="log_out && closeMenu()" v-if="session != null" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Выйти</a>
             </div>
