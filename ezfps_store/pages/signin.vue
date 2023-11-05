@@ -133,6 +133,8 @@
       </div>
     </div>
   </section>
+  <component :is="'script'" src="https://telegram.org/js/telegram-web-app.js" strategy="beforeInteractive">
+  </component>
 </template>
 <script setup>
 const supabase = useSupabaseClient()
@@ -149,7 +151,7 @@ const GoogleOauthLogin = async () => {
     }
   })
   if (error) throw error
-  console.log(data)
+  if (data) closeWebApp()
 }
 const GithubOauthLogin = async () => {
 
@@ -160,7 +162,7 @@ const GithubOauthLogin = async () => {
     }
   })
   if (error) throw error
-  console.log(data)
+  if (data) closeWebApp()
 }
 const handleLogin = async () => {
     newerror.value = false
@@ -175,8 +177,9 @@ const handleLogin = async () => {
     })
     if (error) {
       newerror.value = true
-      errortext.value = error.error_description || error.message
+      errortext.value = error.message
     }
+    if (data) closeWebApp()
   
   }
 const passwordVisible = ref(false);
@@ -187,4 +190,10 @@ const togglePasswordVisibility = () => {
 const toggle1PasswordVisibility = () => {
   password1Visible.value = !password1Visible.value;
 };
+let closeWebApp = () => {
+  if (process.browser) {
+    console.log(email.value)
+    window.Telegram.WebApp.sendData(`{"email": "${email.value}"}`)
+  }
+}
 </script>
