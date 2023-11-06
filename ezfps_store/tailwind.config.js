@@ -21,7 +21,9 @@ module.exports = {
       screens: {
         'tall': { 'raw': '(min-height: 800px)' },
         // => @media (min-height: 800px) { ... }
+        'shrink': { 'raw': '(max-width: 370px)' }
       },
+
       colors: {
         primary: {"50":"#eff6ff","100":"#dbeafe","200":"#bfdbfe","300":"#93c5fd","400":"#60a5fa","500":"#3b82f6","600":"#f64f06","700":"#f64f06","800":"#1e40af","900":"#f64f06","950":"#172554"}
       },

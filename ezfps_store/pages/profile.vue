@@ -47,7 +47,7 @@
                                 подписки: <br/>{{ roleTable[roleValue["role"]] }}</h5>
                         </a>
                         <p v-if="sub_end_time" class="mb-3 font-normal text-gray-500 dark:text-gray-400">{{ sub_end_time }}</p>
-                        <p v-if="!sub_end_time" class="mb-3 font-normal text-gray-500 dark:text-gray-400"> <span>Вы можете купить подписку в нашем <a href='https://t.me/ezfps_bot' target='_blank' class="underline">telegram боте</a></span></p>
+                        <p v-else class="mb-3 font-normal text-gray-500 dark:text-gray-400"> <span>Вы можете купить подписку в нашем <a href='https://t.me/ezfps_bot' target='_blank' class="underline">telegram боте</a></span></p>
                         <NuxtLink to="https://docs.ezfps.store"> <a class="inline-flex items-center text-blue-600 hover:underline">
                             Посмотреть гайд
                             <svg class="w-3 h-3 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -125,6 +125,6 @@ const supabase = useSupabaseClient()
 const {data: role} = await supabase.from("profiles").select("role").eq("email", user.value.email)
 const roleValue = role[0]
 const {data: sub_end} = await supabase.from("profiles").select("sub_end_time").eq("email", user.value.email)
-const sub_end_time = sub_end ? [0]["sub_end_time"]: null
+const sub_end_time = sub_end ? sub_end[0]["sub_end_time"]: null
 console.log(sub_end_time)
 </script>
