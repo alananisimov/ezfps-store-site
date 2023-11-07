@@ -23,6 +23,7 @@ watch(modelRef, model => {
       <TresDirectionalLight :position="[-4, 4, -4]" :intensity="2" cast-shadow color="bisque"/>
       <TresDirectionalLight :position="[4, 4, -4]" :intensity="2" cast-shadow color="bisque"/>
       <TresDirectionalLight :position="[-4, 4, 4]" :intensity="2" cast-shadow color="bisque"/>
+      <TresDirectionalLight :position="[0, -4, 0]" :intensity="2" cast-shadow color="bisque"/>
     </TresCanvas>
 </div>
 </template>

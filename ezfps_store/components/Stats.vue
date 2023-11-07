@@ -1,6 +1,10 @@
 <template>
     <div class="w-full px-4 pt-16">
-    <h2 class="text-4xl font-bold dark:text-white my-16 text-center justify-center ">FAQ</h2>
+      <div class="mx-auto max-w-2xl lg:text-center my-16">
+        <h2 class="text-base font-semibold leading-7 text-orange-600">Вопросы</h2>
+    <h2 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl ">Часто задаваемые вопросы</h2>
+    <p class="mt-6 text-lg leading-8 text-gray-600">Мы стараемся ответить на ваши самые часто задаваемые вопросы здесь. Больше в нашем telegram боте</p>
+    </div>
       <div class="mx-auto w-full max-w-md rounded-2xl bg-white p-2 mb-32">
         <Disclosure v-slot="{ open }">
           <DisclosureButton

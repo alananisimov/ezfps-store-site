@@ -17,7 +17,7 @@
       <PopoverGroup class="hidden lg:flex lg:gap-x-12 ">
         <Popover class="relative">
           <PopoverButton class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
-            Наши проекты
+            Наши продукты
             <ChevronDownIcon class="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
           </PopoverButton>
 
@@ -29,7 +29,7 @@
                     <component :is="item.icon" class="h-6 w-6 text-gray-600 group-hover:text-indigo-600" aria-hidden="true" />
                   </div>
                   <div class="flex-auto">
-                    <a :href="item.href" class="block font-semibold text-gray-900">
+                    <a @click="navigateTo(item.href, {external: item.external})" class="block font-semibold text-gray-900">
                       {{ item.name }}
                       <span class="absolute inset-0" />
                     </a>
@@ -38,7 +38,7 @@
                 </div>
               </div>
               <div class="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
-                <a v-for="item in callsToAction" :key="item.name" :href="item.href" class="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100">
+                <a v-for="item in callsToAction" :key="item.name" @click="navigateTo(item.href, {external: item.external})" class="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100">
                   <component :is="item.icon" class="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
                   {{ item.name }}
                 </a>
@@ -79,7 +79,7 @@
                   <ChevronDownIcon :class="[open ? 'rotate-180' : '', 'h-5 w-5 flex-none']" aria-hidden="true" />
                 </DisclosureButton>
                 <DisclosurePanel class="mt-2 space-y-2">
-                  <NuxtLink v-for="item in [...products, ...callsToAction]" :to="item.href"> <DisclosureButton :key="item.name" as="a" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">{{ item.name }}</DisclosureButton></NuxtLink>
+                  <NuxtLink v-for="item in [...products, ...callsToAction]" :to="item.href"> <DisclosureButton @click="closeMenu()" :key="item.name" as="a" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">{{ item.name }}</DisclosureButton></NuxtLink>
                 </DisclosurePanel>
               </Disclosure>
               <NuxtLink to="/subscribtion"><a class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" @click="closeMenu()">Подписаться</a></NuxtLink>
@@ -147,9 +147,9 @@ const closeMenu = () => {
 const {data: { session }} = await supabase.auth.getSession()
 
 const products = [
-  { name: 'ezfps app', description: 'Современный оптимизатор ПК', href: '/download', icon: ComputerDesktopIcon },
-  { name: 'telegram bot', description: 'Купить доступ к нашему оптимизатору', href: 'https://t.me/ezfps_bot', icon: ShoppingBagIcon },
-  { name: 'mobile optimizer: скоро', description: 'Оптимизируй свой телефон без проблем', href: '#', icon: DevicePhoneMobileIcon }
+  { name: 'ezfps app', description: 'Современный оптимизатор ПК', href: '/download', icon: ComputerDesktopIcon, external: false },
+  { name: 'telegram bot', description: 'Купить доступ к нашему оптимизатору', href: 'https://t.me/ezfps_bot', icon: ShoppingBagIcon, external: true },
+  { name: 'mobile optimizer: скоро', description: 'Оптимизируй свой телефон без проблем', href: '#', icon: DevicePhoneMobileIcon, external: false }
 ]
 
 const callsToAction = [

@@ -22,8 +22,8 @@
                 class="text-transparent bg-clip-text bg-gradient-to-r to-red-600 from-orange-400">оптимизатор</span></h1>
             <p class=" mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 dark:text-gray-400">Наш главный проект
               ezfps app помогает оптимизировать пк для игр и других приложений.</p>
-            <div class="flex flex-col lg:gap-y-3 mb-8 lg:mb-16 space-y-4 sm:flex-row lg:flex-col sm:justify-center sm:space-y-0 sm:space-x-4 lg:space-x-0">
-              <a href="https://ezfps.store/download"
+            <div class="lg:mx-12 flex flex-col lg:gap-y-3 mb-8 lg:mb-16 space-y-4 sm:flex-row lg:flex-col sm:justify-center sm:space-y-0 sm:space-x-4 lg:space-x-0">
+              <a @click="navigateTo('/download')"
                 class="inline-flex justify-center items-center py-3 px-7 text-base font-medium text-center text-white rounded-lg border border-orange-600 hover:bg-orange-200 focus:ring-4 focus:ring-orange-400 dark:focus:ring-primary-900 mx-2 sm:mx-0">
                 <span class="inline-flex text-orange-600 font-bold">Скачать для <span class="inline-flex mt-0.5">
                     <MacosLogo class="ml-4" />

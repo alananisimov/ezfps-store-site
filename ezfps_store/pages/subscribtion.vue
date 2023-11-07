@@ -1,12 +1,12 @@
 <template>
     <div class="bg-white py-12 sm:py-8">
-      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl px-4 lg:px-8">
         <div class="mx-auto max-w-2xl text-center">
           <h1 class="items-center inline-flex text-5xl font-extrabold">ezfps<span class="bg-blue-100 text-orange-500 text-2xl font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-2">PRO</span></h1>
           <p class="hidden sm:inline-flex mt-6 text-lg leading-8 text-gray-600">Присоединяйтесь к тысячам довольных клиентов, которые уже преобразили свои ПК с помощью нашей службы подписки. Не позволяйте проблемам с производительностью сдерживать вас больше. Сделайте первый шаг к более быстрому и эффективному ПК, оформив подписку сегодня!</p>
         </div>
         <section class="bg-white dark:bg-gray-900">
-  <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+  <div class="py-8 sm:px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
       <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
           <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Тарифные планы</h2>
       </div>

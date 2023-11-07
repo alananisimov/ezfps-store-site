@@ -6,7 +6,7 @@
           <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">Лучшее предложение именно для вас</h2>
           <p class="text-gray-500 sm:text-xl">Здесь в ezfps мы предлагаем лучший продукт на рынке</p>
       </div>
-      <div class="space-y-8 mx-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
+      <div class="space-y-8 sm:mx-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
           <div class="border-2 rounded-[30px] border-black p-8 hover:bg-gray-200">
               <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900 ">
                 <MacosLogo />
@@ -47,6 +47,7 @@
                 </svg>
             </a>
           </div>
+          
       </div>
   </div>
 </section >
