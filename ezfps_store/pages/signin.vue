@@ -22,12 +22,12 @@
         </svg>
       </button>
     </div>
-    <div class="flex flex-col items-center justify-center px-6 mx-auto h-screen my-auto tall:sm:-mt-20">
+    <div class="flex flex-col items-center -mt-10 justify-center px-6 mx-auto h-screen my-auto sm:-mt-20">
 
       <div class="w-full bg-white rounded-lg md:mt-0 md:max-w-lg sm:max-w-md mx-16 xl:p-0">
         <div class="space-y-4 md:space-y-6 sm:p-8">
           <h1
-            class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl text-center justify-center items-center mb-5">
+            class="hidden text-2xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl text-center justify-center items-center mb-5 tall:flex">
             Войти
           </h1>
           <form class="space-y-4 md:space-y-6 " @submit.prevent="handleLogin">

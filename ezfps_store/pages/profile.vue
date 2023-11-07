@@ -57,7 +57,8 @@
                             </svg>
                         </a></NuxtLink>
                     </div>
-                    <div class="col-span-full" v-if="user.user_metadata.picture">
+                    <div>
+                    <div class="col-span-full" v-if="user.user_metadata.picture" >
                         <label for="photo" class="block text-sm font-medium leading-6 text-gray-900">Фото профиля</label>
                         <div class="mt-2 flex items-center gap-x-3">
                             <img class="h-12 w-12 text-gray-300 rounded-full" aria-hidden="true" :src="user.user_metadata.picture"/>
@@ -65,7 +66,7 @@
                                 class="rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">Change</button>
                         </div>
                     </div>
-                    
+                    </div>
                 </div>
             </div>
 
@@ -105,11 +106,7 @@
         </div>
     </div>
 
-    <div class="mt-6 flex items-center justify-end gap-x-6">
-        <button type="button" class="text-sm font-semibold leading-6 text-gray-900">Cancel</button>
-        <button type="submit"
-            class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
-    </div>
+  
 </form></template>
   
 <script setup>
@@ -126,5 +123,6 @@ const {data: role} = await supabase.from("profiles").select("role").eq("email", 
 const roleValue = role[0]
 const {data: sub_end} = await supabase.from("profiles").select("sub_end_time").eq("email", user.value.email)
 const sub_end_time = sub_end ? sub_end[0]["sub_end_time"]: null
+
 console.log(sub_end_time)
 </script>

@@ -53,7 +53,7 @@
       </PopoverGroup>
       <div class="hidden lg:flex lg:flex-1 lg:justify-end gap-x-3">
         <NuxtLink to="/profile"><span v-if="session" class="bg-gray-100 text-gray-700 text-sm font-medium mr-2 px-2.5 py-0.5 rounded border border-black mx-5 cursor-pointer">Аккаунт</span></NuxtLink>
-        <NuxtLink to="/signin"><a v-if="session == null" class="text-sm font-semibold leading-6 text-gray-900">Войти <span aria-hidden="true">&rarr;</span></a></NuxtLink>
+        <NuxtLink to="/signin"><a v-if="session == null" class="text-sm font-semibold leading-6 text-gray-900 cursor-pointer">Войти <span aria-hidden="true">&rarr;</span></a></NuxtLink>
         <a @click="log_out" v-if="session != null" class="text-sm font-semibold leading-6 text-gray-900 cursor-pointer">Выйти <span aria-hidden="true">&rarr;</span></a>
       </div>
     </nav>
