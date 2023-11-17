@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-white dark:bg-gray-900 ">
+  <section class="bg-white md:mt-32">
     <div v-if="emailverification == true" id="alert-2"
       class="flex p-4 mb-4 text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
       <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5" fill="currentColor" viewBox="0 0 20 20"

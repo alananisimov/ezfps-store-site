@@ -11,7 +11,7 @@
           <div v-for="feature in features" :key="feature.name" class="relative pl-16">
             <dt class="text-base font-semibold leading-7 text-gray-900">
               <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
-                <img :src="feature.icon" :alt="feature.alt">
+                <NuxtImg :src="feature.icon" :alt="feature.alt" width="30px" height="30px"/>
               </div>
               {{ feature.name }}
             </dt>
@@ -31,7 +31,7 @@
       name: 'ezfps app',
       description:
         'Приложение на Windows для оптимизации пк без лишних действий',
-      icon: "https://i.ibb.co/f2QNQp0/icon.png",
+      icon: "/favicon_small.png",
       alt: "ezfps logo"
     },
     {
