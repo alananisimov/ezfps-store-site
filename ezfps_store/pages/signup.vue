@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-white md:mt-32">
+  <section class="bg-white">
     <div v-if="emailverification == true" id="alert-2"
       class="flex p-4 mb-4 text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
       <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
@@ -37,7 +37,7 @@
         </svg>
       </button>
     </div>
-    <div class="flex flex-col items-center -mt-10 justify-center px-6 mx-auto h-screen my-auto sm:-mt-20">
+    <div class="flex flex-col items-center mt-10 px-6 mx-auto h-screen sm:mt-14">
 
       <div class="w-full bg-white rounded-lg  md:mt-0 md:max-w-lg sm:max-w-md mx-16 xl:p-0">
         <div class="space-y-4 md:space-y-6 sm:p-8">
