@@ -11,7 +11,7 @@
           <div v-for="feature in features" :key="feature.name" class="relative pl-16">
             <dt class="text-base font-semibold leading-7 text-gray-900">
               <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
-                <NuxtImg :src="feature.icon" :alt="feature.alt" width="30px" height="30px"/>
+                <NuxtImg :src="feature.icon" :alt="feature.alt" :width="feature.height" :height="feature.height"/>
               </div>
               {{ feature.name }}
             </dt>
@@ -30,16 +30,18 @@
     {
       name: 'ezfps app',
       description:
-        'Приложение на Windows для оптимизации пк без лишних действий',
+        'Приложение на ПК для оптимизации пк без лишних действий',
       icon: "/favicon_small.png",
-      alt: "ezfps logo"
+      alt: "ezfps logo",
+      height: "40px"
     },
     {
       name: 'Telegram Bot',
       description:
         'Телеграм бот для продажи временный подписок для приложения ezfps',
       icon: 'telegram.svg',
-      alt: "telegram logo"
+      alt: "telegram logo",
+      height: "30px"
     }
   ]
   </script>
