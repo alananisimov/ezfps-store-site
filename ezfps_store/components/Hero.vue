@@ -1,10 +1,11 @@
 <template>
-  
-  <div class="overflow-hidden bg-white pb-16 sm:pt-0 sm:py-0 sm:pb-16 text-center">
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-        <div class="lg:pr-8 lg:pt-4">
-          <div class="lg:max-w-lg my-16 sm:my-24 max-[400px]:my-auto">
+  <div class="relative">
+    
+  <div class="overflow-hidden bg-transparent -mt-6 sm:mt-10 pb-16 sm:pt-0 sm:py-0 sm:pb-16 text-center my-16">
+    <div class="mx-auto max-w-7xl px-6 ">
+      <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20">
+        <div class="">
+          <div class=" my-16 sm:my-24 max-[400px]:my-auto">
             <NuxtLink href="https://docs.ezfps.store/guide"><a
                 class="mb-14 justify-between items-center py-1 px-1 pr-4 sm:mb-7 text-sm text-gray-700 bg-gray-100 rounded-full inline-flex"
                 role="alert">
@@ -24,7 +25,7 @@
             <p class=" mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 dark:text-gray-400">Наш главный проект
               ezfps app помогает оптимизировать пк для игр и других приложений.</p>
               
-            <div class="lg:mx-12 flex flex-col lg:gap-y-3 mb-8 lg:mb-16 space-y-4 sm:flex-row lg:flex-col sm:justify-center sm:space-y-0 sm:space-x-4 lg:space-x-0">
+            <div class=" flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
               <a @click="()=>navigateTo('/download')"
                 class="inline-flex justify-center items-center py-3 px-7 text-base font-medium text-center text-white rounded-lg border border-orange-600 hover:bg-orange-200 focus:ring-4 focus:ring-orange-400 dark:focus:ring-primary-900 mx-2 sm:mx-0">
                 <span class="inline-flex text-orange-600 font-bold">Скачать для <span class="inline-flex mt-0.5">
@@ -54,11 +55,11 @@
           
         </div>
       </div>
-      <div class="hidden lg:block">
+      <!-- <div class="hidden lg:block">
       <Pudge />
-      </div>
+      </div> -->
     </div>
   </div>
 </div>
-  
+</div>
 </template>

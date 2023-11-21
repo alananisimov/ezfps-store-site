@@ -5,20 +5,18 @@ export default defineNuxtConfig({
     "@nuxtjs/supabase",
     "@nuxtjs/color-mode",
     "@nuxthq/ui",
-    "@tresjs/nuxt",
     "nuxt-headlessui",
     "@nuxtseo/module",
     "@nuxt/image",
     "@nuxtjs/partytown",
+    "nuxt-lazy-hydrate"
   ],
   ssr: true,
-
   vite: {
     build: {
       chunkSizeWarningLimit: 1600,
     },
   },
-
   supabase: {
     redirect: false,
   },

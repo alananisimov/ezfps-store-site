@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white scroll-smooth">
+  <div class="bg-white">
     <header class="bg-white isolation-auto">
     <nav class="mx-auto flex z-50 max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
       <div class="flex lg:flex-1 relative">

@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-white py-12 sm:py-8">
+    <div class="bg-white py-12 sm:py-16">
       <div class="mx-auto max-w-7xl px-4 lg:px-8">
         <div class="mx-auto max-w-2xl text-center">
           <h1 class="items-center inline-flex text-5xl font-extrabold">ezfps<span class="bg-blue-100 text-orange-500 text-2xl font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-2">PRO</span></h1>

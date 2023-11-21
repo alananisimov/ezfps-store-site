@@ -22,6 +22,7 @@
   </template>
   
   <script setup>
-  let open = ref(true)
+ 
   import { XMarkIcon } from '@heroicons/vue/20/solid'
+  let open = ref(true)
   </script>
