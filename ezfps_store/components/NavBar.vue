@@ -5,11 +5,11 @@
       <div class="flex lg:flex-1 relative">
         <a class="-m-1.5 p-1.5">
           <span class="sr-only">ezfps project</span>
-          <NuxtLink to="/"><img class="h-8 w-auto" format="webp" height="32" width="32" src="/favicon_small.png" alt="ezfps logo"/></NuxtLink>
+          <NuxtLink to="/"><NuxtImg class="h-8 w-auto" format="webp" height="32" width="32" src="/favicon_small.jpg" alt="ezfps logo"/></NuxtLink>
         </a>
       </div>
       <div class="flex lg:hidden">
-        <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700" @click="mobileMenuOpen = true">
+        <button v-if="mobileMenuOpen == false" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700" @click="mobileMenuOpen = true">
           <span class="sr-only">Open main menu</span>
           <Bars3Icon class="h-6 w-6" aria-hidden="true" />
         </button>
@@ -63,7 +63,7 @@
         <div class="flex items-center justify-between">
           <a href="#" class="-m-1.5 p-1.5">
             <span class="sr-only">ezfps</span>
-            <NuxtLink to="/"><img class="h-8 w-auto" format="webp" src="/favicon_small.png" height="32" width="32" alt="ezfps logo" /></NuxtLink>
+            <NuxtLink to="/"><NuxtImg class="h-8 w-auto" format="webp" src="/favicon_small.jpg" height="32" width="32" alt="ezfps logo" /></NuxtLink>
           </a>
           <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" @click="mobileMenuOpen = false">
             <span class="sr-only">Close menu</span>
@@ -88,7 +88,7 @@
               <NuxtLink><a href="https://docs.ezfps.store"><a class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" @click="closeMenu()">Начать!</a></a></NuxtLink>
             </div>
             <div class="py-6">
-              <NuxtLink to="/profile"><a @click="closeMenu()" v-if="user" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Аккаунт</a></NuxtLink>
+              <NuxtLink href="/profile"><a @click="closeMenu()" v-if="user" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Аккаунт</a></NuxtLink>
               <NuxtLink to="/signin"> <a v-if="user == null" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" @click="closeMenu()">Войти</a></NuxtLink>
               <a @click="log_out && closeMenu()" v-if="user" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Выйти</a>
             </div>

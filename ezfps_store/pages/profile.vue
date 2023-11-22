@@ -26,9 +26,12 @@
                             <div
                                 class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
 
-                                <p
+                                <p v-if="user.user_metadata"
                                     class="pl-3 block flex-1 border-0 bg-transparent py-1.5 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
-                                    {{ user.user_metadata.full_name || user.email }}</p>
+                                    {{ user.user_metadata.full_name }}</p>
+                                <p v-if="user"
+                                    class="px-3 block flex-1 border-0 bg-transparent py-1.5 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
+                                    {{ user.email }}</p>
                             </div>
                         </div>
                     </div>
@@ -121,8 +124,8 @@ const user = useSupabaseUser()
 const supabase = useSupabaseClient()
 const {data: role} = await supabase.from("profiles").select("role").eq("email", user.value.email)
 const roleValue = role[0]
-const {data: sub_end} = await supabase.from("profiles").select("sub_end_time").eq("email", user.value.email)
-const sub_end_time = sub_end ? sub_end[0]["sub_end_time"]: null
+const {data: sub_end} = await supabase.from("profiles").select("expiration_date").eq("email", user.value.email)
+const sub_end_time = sub_end ? sub_end[0]["expiration_date"]: null
 
 console.log(sub_end_time)
 </script>
