@@ -9,7 +9,7 @@ export default defineNuxtConfig({
     "@nuxtseo/module",
     "@nuxt/image",
     "@nuxtjs/partytown",
-    "nuxt-lazy-hydrate"
+    "nuxt-lazy-hydrate",
   ],
   ssr: true,
   vite: {
@@ -19,6 +19,12 @@ export default defineNuxtConfig({
   },
   supabase: {
     redirect: false,
+  },
+  runtimeConfig: {
+    public: {
+      SITE_URL: process.env.SITE_URL,
+      BANNER_OPEN: true,
+    },
   },
   postcss: {
     plugins: {

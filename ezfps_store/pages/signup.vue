@@ -45,7 +45,7 @@
             class="hidden text-2xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl text-center justify-center items-center mb-5 tall:flex">
             Регистрация
           </h1>
-          <form class="space-y-4 md:space-y-6 " @submit.prevent="handleLogin">
+          <form class="space-y-4 md:space-y-6 " @submit.prevent="handleRegister">
             <div class="inline-flex items-center justify-center w-full">
               <button @click="GoogleOauthLogin" type="button"
                 class="text-white bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#1da1f2]/50 font-medium rounded-lg text-sm px-10 sm:px-5 py-2.5 text-center inline-flex items-center mr-2 mb-2">
@@ -154,18 +154,20 @@
 <script setup>
 const supabase = useSupabaseClient()
 let emailverification = ref(false)
+const config = useRuntimeConfig()
+const site_url = config.public.SITE_URL
 const loading = ref(false)
 const newerror = ref(false)
 const errortext = ref('')
 const email = ref('')
 const password = ref('')
-const handleLogin = async () => {
+const handleRegister = async () => {
   loading.value = true
   const { data, error } = await supabase.auth.signUp({
     email: email.value,
     password: password.value,
     options: {
-      emailRedirectTo: 'https://www.ezfps.store'
+      emailRedirectTo: site_url
     }
   })
 
@@ -179,7 +181,7 @@ const GoogleOauthLogin = async () => {
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: 'google',
     options: {
-      redirectTo: 'https://ezfps.store'
+      redirectTo: site_url
     }
   })
   if (error) throw error
@@ -191,7 +193,7 @@ const GithubOauthLogin = async () => {
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: 'github',
     options: {
-      redirectTo: 'https://ezfps.store'
+      redirectTo: site_url
     }
   })
   if (error) throw error

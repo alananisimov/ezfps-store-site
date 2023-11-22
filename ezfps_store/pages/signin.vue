@@ -142,12 +142,14 @@ const newerror = ref(false)
 const errortext = ref('')
 const loading = ref(false)
 const email = ref('')
+const config = useRuntimeConfig()
+const site_url = config.public.SITE_URL
 const password = ref('')
 const GoogleOauthLogin = async () => {
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: 'google',
     options: {
-      redirectTo: 'https://ezfps.store'
+      redirectTo: site_url
     }
   })
   if (error) throw error
@@ -158,11 +160,11 @@ const GithubOauthLogin = async () => {
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: 'github',
     options: {
-      redirectTo: 'https://ezfps.store'
+      redirectTo: site_url
     }
   })
   if (error) throw error
-  if (data) closeWebApp()
+  if (data) closeWebApp();
 }
 const handleLogin = async () => {
     newerror.value = false
@@ -170,10 +172,11 @@ const handleLogin = async () => {
     let { data, error } = await supabase.auth.signInWithPassword({
       email: email.value,
       password: password.value,
-      redirectTo: 'https://ezfps.store'
+      redirectTo: site_url
 
     }).finally(()=>{
       loading.value = false
+      navigateTo("/")
     })
     if (error) {
       newerror.value = true

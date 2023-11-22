@@ -1,7 +1,9 @@
 <template>
   <div class="scroll-smooth">
   <link rel="icon" href="/favicon-use.png">
-    <NavBar/>
+    <NuxtLayout>
+      <NuxtPage/>
+    </NuxtLayout>
     <NuxtLoadingIndicator color="orange"/>
   </div>
 
