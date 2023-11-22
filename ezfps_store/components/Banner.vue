@@ -13,7 +13,7 @@
         <a href="/signup" class="flex-none text-white rounded-full bg-black px-3.5 py-1 text-sm font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900">Зарегистрируйся сейчас! <span aria-hidden="true">&rarr;</span></a>
       </div>
       <div class="flex flex-1 justify-end">
-        <button type="button" class="-m-3 p-3 focus-visible:outline-offset-[-4px]" @click="closeBanner()">
+        <button type="button" class="-m-3 p-3 focus-visible:outline-offset-[-4px]" @click="open = false">
           <span class="sr-only">Dismiss</span>
           <XMarkIcon class="h-5 w-5 text-gray-900" aria-hidden="true" />
         </button>
@@ -26,7 +26,4 @@
   const config = useRuntimeConfig()
   const user = useSupabaseUser()
   let open = ref(user.value == null)
-  const closeBanner = () => {
-    open = false
-  }
   </script>
