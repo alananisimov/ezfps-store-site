@@ -31,7 +31,7 @@
       name: 'ezfps app',
       description:
         'Приложение на ПК для оптимизации пк без лишних действий',
-      icon: "favicon_small.png",
+      icon: "/favicon_small.png",
       alt: "ezfps logo",
       height: "40px"
     },
@@ -39,7 +39,7 @@
       name: 'Telegram Bot',
       description:
         'Телеграм бот для продажи временный подписок для приложения ezfps',
-      icon: 'telegram.svg',
+      icon: '/telegram.svg',
       alt: "telegram logo",
       height: "30px"
     }
