@@ -13,18 +13,18 @@
   ```
 -->
 <template>
-    <form>
-        <div class="space-y-12 m-4 sm:m-8 lg:m-16">
+    <form class="w-full">
+        <div class="space-y-12 m-4 sm:m-8 lg:m-16 max-w-sm">
             <div class="border-b border-gray-900/10 pb-12">
                 <h2 class="text-base font-semibold leading-7 text-gray-900">Аккаунт</h2>
                 <p class="mt-1 text-sm leading-6 text-gray-600">Основная информация о вашем аккаунте</p>
 
                 <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-                    <div class="sm:col-span-4">
+                    <div class="sm:col-span-full">
                         <label for="username" class="block text-sm font-medium leading-6 text-gray-900">Username</label>
                         <div class="mt-2">
                             <div
-                                class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                                class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:w-full">
 
                                 <p v-if="user.user_metadata"
                                     class="pl-3 block flex-1 border-0 bg-transparent py-1.5 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
@@ -60,9 +60,9 @@
                             </svg>
                         </a></NuxtLink>
                     </div>
-                    <div>
-                    <div class="col-span-full" v-if="user.user_metadata.picture" >
-                        <label for="photo" class="block text-sm font-medium leading-6 text-gray-900">Фото профиля</label>
+                    <div class="w-full col-span-full">
+                    <div class="" v-if="user.user_metadata.picture" >
+                        <label for="photo" class=" text-sm font-medium leading-6 text-gray-900">Фото профиля</label>
                         <div class="mt-2 flex items-center gap-x-3">
                             <img class="h-12 w-12 text-gray-300 rounded-full" aria-hidden="true" :src="user.user_metadata.picture"/>
                             <button type="button"

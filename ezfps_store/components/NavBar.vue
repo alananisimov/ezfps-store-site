@@ -5,7 +5,7 @@
       <div class="flex lg:flex-1 relative">
         <a class="-m-1.5 p-1.5">
           <span class="sr-only">ezfps project</span>
-          <NuxtLink to="/"><NuxtImg class="h-8 w-auto" format="webp" height="32" width="32" src="/favicon_small.jpg" alt="ezfps logo"/></NuxtLink>
+          <NuxtLink to="/"><NuxtImg class="h-8 w-auto" format="webp" height="96" width="96" src="/favicon_small.jpg" alt="ezfps logo"/></NuxtLink>
         </a>
       </div>
       <div class="flex lg:hidden">
@@ -49,7 +49,7 @@
 
         <NuxtLink to="/subscribtion"><a class="text-sm font-semibold leading-6 text-gray-900">Подписаться</a></NuxtLink>
         <NuxtLink to="/about"><a class="text-sm font-semibold leading-6 text-gray-900 cursor-pointer">О нас</a></NuxtLink>
-        <NuxtLink><a href="https://docs.ezfps.store"><a class="text-sm font-semibold leading-6 text-gray-900">Начать!</a></a></NuxtLink>
+        <NuxtLink><a href="https://docs.ezfps.store"><a class="text-sm font-semibold leading-6 text-gray-900">Документация</a></a></NuxtLink>
       </PopoverGroup>
       <div class="hidden lg:flex lg:flex-1 lg:justify-end gap-x-3">
         <NuxtLink to="/profile"><span v-if="user" class=" text-gray-700 text-sm font-medium mr-2 px-2.5 py-0.5 rounded border border-gray-500 mx-5 cursor-pointer">Аккаунт</span></NuxtLink>
@@ -59,11 +59,11 @@
     </nav>
     <Dialog as="div" class="lg:hidden" @close="mobileMenuOpen = false" :open="mobileMenuOpen">
       <div class="fixed inset-0 z-10"></div>
-      <DialogPanel class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+      <DialogPanel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
         <div class="flex items-center justify-between">
           <a href="#" class="-m-1.5 p-1.5">
             <span class="sr-only">ezfps</span>
-            <NuxtLink to="/"><NuxtImg class="h-8 w-auto" format="webp" src="/favicon_small.jpg" height="32" width="32" alt="ezfps logo" /></NuxtLink>
+            <NuxtLink to="/"><NuxtImg class="h-8 w-auto" format="webp" src="/favicon_small.jpg" height="96" width="96" alt="ezfps logo" /></NuxtLink>
           </a>
           <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" @click="mobileMenuOpen = false">
             <span class="sr-only">Close menu</span>
@@ -85,12 +85,12 @@
               </Disclosure>
               <NuxtLink to="/subscribtion"><a class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" @click="closeMenu()">Подписаться</a></NuxtLink>
               <NuxtLink to="/about"><a class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" @click="closeMenu()">О нас</a></NuxtLink>
-              <NuxtLink><a href="https://docs.ezfps.store"><a class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" @click="closeMenu()">Начать!</a></a></NuxtLink>
+              <NuxtLink><a href="https://docs.ezfps.store"><a class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" @click="closeMenu()">Документация</a></a></NuxtLink>
             </div>
             <div class="py-6">
               <NuxtLink href="/profile"><a @click="closeMenu()" v-if="user" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Аккаунт</a></NuxtLink>
               <NuxtLink to="/signin"> <a v-if="user == null" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" @click="closeMenu()">Войти</a></NuxtLink>
-              <a @click="log_out && closeMenu()" v-if="user" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Выйти</a>
+              <a @click="log_out() && closeMenu()" v-if="user" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Выйти</a>
             </div>
           </div>
         </div>
@@ -144,7 +144,9 @@ async function log_out(){
 const closeMenu = () => {
   mobileMenuOpen.value = false
 }
-const {data: { session }} = await supabase.auth.getSession()
+supabase.auth.onAuthStateChange((event, session) => {
+  console.log(event, session)
+})
 
 const products = [
   { name: 'ezfps app', description: 'Современный оптимизатор ПК', href: '/download', icon: ComputerDesktopIcon, external: false },

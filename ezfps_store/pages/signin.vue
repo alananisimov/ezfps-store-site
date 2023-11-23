@@ -149,22 +149,23 @@ const GoogleOauthLogin = async () => {
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: 'google',
     options: {
-      redirectTo: site_url
+      redirectTo: site_url + "/redirect"
     }
   })
   if (error) throw error
-  if (data) closeWebApp()
 }
 const GithubOauthLogin = async () => {
 
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: 'github',
     options: {
-      redirectTo: site_url
+      redirectTo: site_url + "/redirect"
     }
-  })
+  }).finally(()=>{
+      loading.value = false
+      navigateTo("/redirect")
+    })
   if (error) throw error
-  if (data) closeWebApp();
 }
 const handleLogin = async () => {
     newerror.value = false
@@ -176,7 +177,7 @@ const handleLogin = async () => {
 
     }).finally(()=>{
       loading.value = false
-      navigateTo("/")
+      navigateTo("/redirect")
     })
     if (error) {
       newerror.value = true
