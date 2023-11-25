@@ -24,8 +24,6 @@
 </template>
   
   <script setup>
-  import { ArrowPathIcon, CloudArrowUpIcon, FingerPrintIcon, LockClosedIcon } from '@heroicons/vue/24/outline'
-  
   const features = [
     {
       name: 'ezfps app',

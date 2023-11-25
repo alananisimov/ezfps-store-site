@@ -181,7 +181,7 @@ const GoogleOauthLogin = async () => {
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: 'google',
     options: {
-      redirectTo: site_url + "/redirect"
+      redirectTo: site_url + "/"
     }
   })
   if (error) throw error
@@ -192,7 +192,7 @@ const GithubOauthLogin = async () => {
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: 'github',
     options: {
-      redirectTo: site_url + "/redirect"
+      redirectTo: site_url + "/"
     }
   })
   if (error) throw error

@@ -31,7 +31,7 @@
             Войти
           </h1>
           <form class="space-y-4 md:space-y-6 " @submit.prevent="handleLogin">
-            <div class="inline-flex items-center justify-center w-full">
+            <div v-if="platform == 'unknown'" class="inline-flex items-center justify-center w-full">
               <button @click="GoogleOauthLogin" type="button"
                 class="text-white bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#1da1f2]/50 font-medium rounded-lg text-sm px-10 sm:px-5 py-2.5 text-center inline-flex items-center mr-2 mb-2">
                 <svg class="w-4 h-4 sm:mr-2 sm:-ml-1 ml-1" aria-hidden="true" focusable="false" data-prefix="fab"
@@ -53,7 +53,7 @@
                 <p class="text-white form-medium text-sm hidden sm:flex">Войти через GitHub</p>
               </button>
             </div>
-            <div class="inline-flex items-center justify-center w-full">
+            <div v-if="platform == 'unknown'" class="inline-flex items-center justify-center w-full">
               <hr class="w-full h-px my-4 bg-gray-200 border-0">
               <span class="absolute px-3 font-medium text-gray-900 -translate-x-1/2 bg-white left-1/2">или</span>
             </div>
@@ -114,8 +114,7 @@
             <div class="flex items-start">
               <div class="flex items-center h-5">
                 <input id="terms" aria-describedby="terms" type="checkbox"
-                  class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3"
-                  required="">
+                  class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3" required="">
               </div>
               <div class="ml-3 text-sm">
                 <label for="terms" class="font-light text-gray-500">Я принимаю <a
@@ -140,6 +139,8 @@
 const supabase = useSupabaseClient()
 const newerror = ref(false)
 const errortext = ref('')
+const isTelegram = ref('')
+const platform = ref('unknown')
 const loading = ref(false)
 const email = ref('')
 const config = useRuntimeConfig()
@@ -149,43 +150,45 @@ const GoogleOauthLogin = async () => {
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: 'google',
     options: {
-      redirectTo: site_url + "/redirect"
+      redirectTo: site_url + "/"
     }
   })
   if (error) throw error
+  if (data) {
+    loading.value = false
+    navigateTo("/")
+  }
 }
 const GithubOauthLogin = async () => {
 
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: 'github',
     options: {
-      redirectTo: site_url + "/redirect"
+      redirectTo: site_url + "/"
     }
-  }).finally(()=>{
-      loading.value = false
-      navigateTo("/redirect")
-    })
+  })
   if (error) throw error
+  if (data) {
+    loading.value = false
+    navigateTo("/")
+  }
 }
 const handleLogin = async () => {
-    newerror.value = false
-    loading.value = true
-    let { data, error } = await supabase.auth.signInWithPassword({
-      email: email.value,
-      password: password.value,
-      redirectTo: site_url
+  newerror.value = false
+  loading.value = true
+  let { data, error } = await supabase.auth.signInWithPassword({
+    email: email.value,
+    password: password.value,
+    redirectTo: site_url
 
-    }).finally(()=>{
-      loading.value = false
-      navigateTo("/redirect")
-    })
-    if (error) {
-      newerror.value = true
-      errortext.value = error.message
-    }
-    if (data) closeWebApp()
-  
+  })
+  if (error) {
+    newerror.value = true
+    errortext.value = error.message
   }
+  if (data && error == null) closeWebApp(); loading.value = false; navigateTo("/")
+
+}
 const passwordVisible = ref(false);
 const password1Visible = ref(false)
 const togglePasswordVisibility = () => {
@@ -200,4 +203,13 @@ let closeWebApp = () => {
     window.Telegram.WebApp.sendData(`{"email": "${email.value}"}`)
   }
 }
+watchEffect(() => {
+  if (process.browser) {
+    if (window.Telegram) platform.value = window.Telegram.WebApp.platform
+    // console.log(window.Telegram.WebApp.platform == "unknown", "is not TG BOT")
+
+  }
+
+
+})
 </script>

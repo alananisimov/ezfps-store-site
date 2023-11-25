@@ -47,7 +47,7 @@
           </transition>
         </Popover>
 
-        <NuxtLink to="/subscribtion"><a class="text-sm font-semibold leading-6 text-gray-900">Подписаться</a></NuxtLink>
+        <NuxtLink to="/subscribtion"><a class="text-sm font-semibold leading-6 text-gray-900">Купить подписку</a></NuxtLink>
         <NuxtLink to="/about"><a class="text-sm font-semibold leading-6 text-gray-900 cursor-pointer">О нас</a></NuxtLink>
         <NuxtLink><a href="https://docs.ezfps.store"><a class="text-sm font-semibold leading-6 text-gray-900">Документация</a></a></NuxtLink>
       </PopoverGroup>
@@ -83,7 +83,7 @@
                   <NuxtLink v-for="item in [...products, ...callsToAction]" :to="item.href"> <DisclosureButton @click="closeMenu()" :key="item.name" as="a" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">{{ item.name }}</DisclosureButton></NuxtLink>
                 </DisclosurePanel>
               </Disclosure>
-              <NuxtLink to="/subscribtion"><a class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" @click="closeMenu()">Подписаться</a></NuxtLink>
+              <NuxtLink to="/subscribtion"><a class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" @click="closeMenu()">Купить подписку</a></NuxtLink>
               <NuxtLink to="/about"><a class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" @click="closeMenu()">О нас</a></NuxtLink>
               <NuxtLink><a href="https://docs.ezfps.store"><a class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" @click="closeMenu()">Документация</a></a></NuxtLink>
             </div>
@@ -121,25 +121,21 @@ import {
   PopoverPanel,
 } from '@headlessui/vue'
 import {
-  ArrowPathIcon,
   Bars3Icon,
-  ChartPieIcon,
-  CursorArrowRaysIcon,
-  FingerPrintIcon,
-  SquaresPlusIcon,
   XMarkIcon,
   ComputerDesktopIcon,
   ShoppingBagIcon,
   DevicePhoneMobileIcon
 } from '@heroicons/vue/24/outline'
 
-import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/vue/20/solid'
+import { ChevronDownIcon } from '@heroicons/vue/20/solid'
 
 const supabase = useSupabaseClient()
 const { data: { user } } = await supabase.auth.getUser()
 async function log_out(){
   const { error } = await supabase.auth.signOut()
   if (error) throw error
+  navigateTo("/")
 }
 const closeMenu = () => {
   mobileMenuOpen.value = false
